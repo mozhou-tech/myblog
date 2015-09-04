@@ -10,4 +10,4 @@ categories: IT技术
 
 这是一本我最近在阅读的书，PHP与最初学习时已经有很大的不同。她像NodeJS一样，有自己的依赖管理，也有自己的语言生态系统。
 
-[《Modern PHP》Kindle版](/{{title}}/OReilly.Modern.PHP.2015.2.mobi)
+[《Modern PHP》Kindle版](/attach/OReilly.Modern.PHP.2015.2.mobi)

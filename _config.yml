@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tenstone(刘远程)
+title: Tenstone - 刘远程's祖传博客
 subtitle: 刘远程's祖传博客
-description: 你是谁未了谁
+description:
 author: Tenstone
 language: zh-cn
 timezone:
@@ -71,3 +71,4 @@ deploy:
   type: git
   repo: https://github.com/tenstone/tenstone.github.io.git
   branch: master
+  message: page update.
