@@ -19,3 +19,6 @@ categories: IT技术
 
     $ hexo generate
     $ hexo deploy
+## 写作
+
+    $ hexo new [layout] <title>
