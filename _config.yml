@@ -69,6 +69,7 @@ theme: yilia
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/tenstone/tenstone.github.io.git
+  repo: git@github.com:tenstone/myblog.git
+#  repo: https://github.com/tenstone/tenstone.github.io.git
   branch: master
   message: page update.
