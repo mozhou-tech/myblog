@@ -49,16 +49,11 @@ tagcloud: true
 #不开启——
 friends: true
 #开启——
-#friends:
-#  奥巴马的博客: http://localhost:4000/
-#  卡卡的美丽传说: http://localhost:4000/
-#  本泽马的博客: http://localhost:4000/
-#  吉格斯的博客: http://localhost:4000/
-#  习大大大不同: http://localhost:4000/
-#  托蒂的博客: http://localhost:4000/
+friends:
+  安正超的博客: http://overtrue.me/
 
 #是否开启“关于我”。
 #不开启——
 aboutme: true
 #开启——
-#aboutme: 风一样的男人
+aboutme: 风一样的男人
