@@ -1,6 +1,8 @@
 title: CentOS 7一键部署VPN
 date: 2015-12-18 10:47:01
-tags: VPN CentOS
+tags: VPN 
+- CentOS
+
 categories: IT技术
 ---
 参考：[https://blog.linuxeye.com/412.html](https://blog.linuxeye.com/412.html)
