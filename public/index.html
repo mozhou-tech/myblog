@@ -186,10 +186,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-CentOS-7下安装MySQL改变数据目录后无法启动" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CentOS 7下安装MySQL遇到的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/18/CentOS-7下安装MySQL改变数据目录后无法启动/" class="article-date">
+      <a href="/2015/12/18/CentOS 7下安装MySQL遇到的一些问题/" class="article-date">
   	<time datetime="2015-12-18T01:16:49.000Z" itemprop="datePublished">2015-12-18</time>
 </a>
     </div>
@@ -203,7 +203,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/18/CentOS-7下安装MySQL改变数据目录后无法启动/">CentOS 7下安装MySQL改变数据目录后无法启动</a>
+      <a class="article-title" href="/2015/12/18/CentOS 7下安装MySQL遇到的一些问题/">CentOS 7下安装MySQL遇到的一些问题</a>
     </h1>
   
 
@@ -213,9 +213,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>部署环境：CentOS下安装MySQL5.6.28。一开始安装MySQL5.7.10也是遇到这个问题。</p>
-<p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
+<h2 id="改变数据目录后无法启动">改变数据目录后无法启动</h2><p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
 <pre><code>ln <span class="operator">-s</span> /alidata/mysqldata mysql
 <span class="comment">#ln -s 源目录 目录或连接名</span>
+</code></pre><h2 id="数据转移">数据转移</h2><p>以前一直使用Navicat通过数据传输的方式转移或备份数据，但是今天转移数据到正式服时，一直报错并显示</p>
+<pre><code><span class="built_in">Data</span> truncated f<span class="subst">or</span> column <span class="string">`???`</span> ??? <span class="attribute">...</span>
+</code></pre><p>看起来Navicat把数据截断了，后来使用mysqldump转移成功</p>
+<pre><code>mysqldump -u root qjiatrip &gt; backup<span class="class">.sql</span>
+<span class="id">#mysqldump</span> -u 用户名 数据库名 &gt; 备份名.sql
 </code></pre><p>嗯，就是这样。</p>
 
       
