@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 15px;">写作</a> <a href="/tags/创业/" style="font-size: 20px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 15px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 15px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/写作/" style="font-size: 15px;">写作</a> <a href="/tags/创业/" style="font-size: 20px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 15px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 15px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -185,6 +185,138 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-CentOS-7下安装MySQL改变数据目录后无法启动" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/18/CentOS-7下安装MySQL改变数据目录后无法启动/" class="article-date">
+  	<time datetime="2015-12-18T01:16:49.000Z" itemprop="datePublished">2015-12-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/18/CentOS-7下安装MySQL改变数据目录后无法启动/">CentOS 7下安装MySQL改变数据目录后无法启动</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>部署环境：CentOS下安装MySQL5.6.28。一开始安装MySQL5.7.10也是遇到这个问题。</p>
+<p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
+<pre><code>ln <span class="operator">-s</span> /alidata/mysqldata mysql
+<span class="comment">#ln -s 源目录 目录或连接名</span>
+</code></pre><p>嗯，就是这样。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-来一掌O2O平台技术架构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/04/来一掌O2O平台技术架构/" class="article-date">
+  	<time datetime="2015-12-04T09:00:35.000Z" itemprop="datePublished">2015-12-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/04/来一掌O2O平台技术架构/">来一掌O2O平台技术架构</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来一掌CTO还是我人生路上还是比较重要的一个角色。留下技术笔记，供后来回忆，也给大家用来参考。</p>
+<h2 id="技术框架">技术框架</h2><p>后台：CentOS、Nginx、PHP、MySQL<br>前端：Angularjs<br>PHP framework：Laravel<br>选择前端框架的时候，纠结了好一整子，错过了ionicframework。后来发现企查查把这个基于Angularjs的框架用的很好，所以我在自己的另一个“灸法速查”项目中用了起来，效率还是挺高的。</p>
+<h2 id="说说Modern_PHP">说说Modern PHP</h2><p>后来才知道更多人用的是PHP5.3以前的版本，当时花了很多时间找到这个Laravel框架，14年底刚刚开始在国内流行，但是在国外已经风生水气了。一个最大的好处是借鉴了Linux的包管理机制，在<a href="http://packagist.org" target="_blank" rel="external">packagist.org</a>可以找到大多数你需要开发，但是已经有人做好了的功能。所需要做的，就是把包名加入composer.json，执行php composer.phar update，然后参照文档编写。<br>如果你想更深入的了解Modern PHP，可以Star这个仓库：<a href="https://github.com/laravel-china/php-the-right-way" target="_blank" rel="external">https://github.com/laravel-china/php-the-right-way</a>。</p>
+<h2 id="RESTful风格">RESTful风格</h2><p>前端与后端，所有的数据都是Ajax获取，这也造成了页面卡顿需要加载时间，或许引入缓加载可以减轻这个问题。这么做的好处是，在将来开发安卓和iOS端的时候，没必要再重新做一遍后端开发了。其实在年底的时候，已经发现大多数人采用了这种方式，也有人比我们优化的更好。<br>后来做一个SCM系统时，采用了传统的网页方式，RESTful有以下好处：</p>
+<blockquote>
+<ol>
+<li>减少查询次数，提升并发能力</li>
+<li></li>
+</ol>
+</blockquote>
+<h2 id="基于系统可靠性的考虑">基于系统可靠性的考虑</h2><ol>
+<li>使用事务管理</li>
+<li>定期的数据备份（每天一次系统镜像）</li>
+</ol>
+<h2 id="难点">难点</h2><p>整个系统没有太大的技术难点，要说比较麻烦的地方，就是时间块的管理吧。每个推拿师的可接单时间，都被划分成块存储在可用时间表里，这部分当时有点过度设计了，但是在做的时候，并不能搞清楚需要做成什么样子。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Git自动化部署的研究" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -590,8 +722,8 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
       
         <h2 id="前言">前言</h2><p>早在几年以前，我就非常想写一本跟搜索引擎有关的书，因为搜索引擎很有趣，我用它学会了现在掌握的大多数技能。或许跟你想的不太一样，我说的不是百度，也不特指Google，而是搜索的技巧和习惯。</p>
 <p>Web是1992年出现的，1993年就有了Web搜索引擎，不过那时候还没有多少Web页面可供搜索。所以杨致远和大卫·费罗凭借一个人工编辑的网址站，就完成了整个互联网的导航，并因此创办了Yahoo!。正是因为搜索引擎的出现，才让互联网冲出了黑暗。</p>
-<p>现在搜索随手可做</p>
-<p>“搜索”被所有具有互联网使用经验的人熟知，而且每天都在使用。</p>
+<p>现在搜索随手可做，</p>
+<p>“搜索”被所有具有互联网使用经验的人熟知，而且每天都在使用。<br>信息时代渐行渐远逐渐藏进我们的生活，利用各种方法挖掘信息的能力愈发重要。</p>
 
       
     </div>
@@ -685,10 +817,10 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
 
 
   
-    <article id="post-邂逅了IDG资本的常亮" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-坎坷融资路" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/29/邂逅了IDG资本的常亮/" class="article-date">
+      <a href="/2015/11/29/坎坷融资路/" class="article-date">
   	<time datetime="2015-11-29T07:17:09.000Z" itemprop="datePublished">2015-11-29</time>
 </a>
     </div>
@@ -702,7 +834,7 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/29/邂逅了IDG资本的常亮/">邂逅常亮，IDG资本早期项目投资总监</a>
+      <a class="article-title" href="/2015/11/29/坎坷融资路/">坎坷融资路</a>
     </h1>
   
 
@@ -711,9 +843,16 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="缘起">缘起</h2><p>2015年10月26日，我结束了在来一掌的CTO生涯，离开了丁佳林，这位有点传奇色彩的人物，当然我也不排斥再次合作的机会。这次离开，在半年前就埋下了伏笔，我加入了Q家旅行。<br>这是一个已经盈利的项目，一半以上的股东在35岁以上。跟想象的一样，我占了点小股但工资不高，当然我看重的是两年内公司能达到一个不错的规模，或许在南京买一个大一点的房子就变成一件很有可能的事情。就在我加入不久，公司与苏大天宫签订TS（投资意向书），但他们不会全投，需要我们继续寻找跟投。</p>
-<h2 id="结识">结识</h2><p>为了寻找跟投，我们联系了南京融资界的“皮条客”，皮条客给我们介绍了很多家，IDG是其中之一。在常亮眼中，这位皮条客挺“地头蛇”的。IDG是国际顶级投资公司，之前只是在新闻里听说过，没想到我们这么小规模的公司也能碰上这么大的投行公司。作为CTO，融资的事情前期与我并无多大关系，但是我还是要跟着一起看看是怎么回事，哈哈哈。<br>常是个很有趣的人，跟我们的VP聊了很多生孩子的话题，什么开一指五指的还没太懂。<br>听说，IDG内部认为，融资额少于5000w的都属于早期项目。</p>
-<h2 id="结束">结束</h2><p>谈的开心归谈的开心，投不投我们的项目，还是要等待IDG的研究结果，希望能有一个很好的结局。等我更新本次融资的结果。<br>记录下来，完全是因为我觉得IDG对于我们这些草民来讲，是一个很高大上的地方。</p>
+        <h2 id="缘起">缘起</h2><p>2015年10月26日，我加入了某境外游项目。鉴于对融资过程见闻体会。这是一个已经盈利的项目，一半以上的股东在35岁以上。跟想象的一样，我占了点小股但工资不高，当然我看重的是两年内公司能达到一个不错的规模，或许在南京买一个大一点的房子就变成一件很有可能的事情。就在我加入不久，公司与某天宫签订TS（投资意向书），但他们不会全投，需要我们继续寻找跟投。</p>
+<h2 id="领头">领头</h2><p>在我加入前，就已经初步达成了投资意向，后来他们说我卡的时间点太对了。不久后就签订TS，与某天宫确立领头关系。小VC受个人决定的影响较大，或许并不是足够的客观，公关效果较大。</p>
+<h2 id="约见IDG">约见IDG</h2><p>为了寻找跟投，我们联系了南京融资界的“皮条客”，皮条客给我们介绍了很多家，IDG是其中之一。在常亮眼中，这位皮条客挺“地头蛇”的。IDG是国际顶级投资公司，之前只是在新闻里听说过，没想到我们这么小规模的公司也能碰上这么大的投行公司。作为CTO，融资的事情前期与我并无多大关系，但是我还是要跟着一起看看是怎么回事，哈哈哈。听说，IDG内部认为，融资额少于5000w的都属于早期项目。</p>
+<hr>
+<p>2015年12月7日 更新<br><img src="../attach/IDG给的回复1.jpg" alt="tuppian"><br>从回复上看，IDG的尽调能力可见一斑，每一点都切中要害。一个投资机构的投资水平，体现在分析师的角色身上，对于大型融资机构而言，外围尽调到企业财务、行业能力似乎是基础能力。所以在跟大机构谈融资时，还是实诚点比较好。几点体会：</p>
+<ol>
+<li>做企业需要做好内功，内功不足，还是会被看出来的</li>
+<li>不急着吹牛，先做点什么证明自己所说的</li>
+</ol>
+<h2 id="某牛">某牛</h2><p>听说去年就有过投资意向，但价格太低我们不干，而今年某牛却一直在风头浪尖上。</p>
 
       
     </div>
@@ -728,133 +867,6 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-商业运营的本质是人群运营" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/29/商业运营的本质是人群运营/" class="article-date">
-  	<time datetime="2015-11-29T05:59:41.000Z" itemprop="datePublished">2015-11-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/29/商业运营的本质是人群运营/">商业运营的本质是人群运营</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="缘起">缘起</h2><p>经历过O2O的第一波浪潮，从踌躇满志到战略转型，似乎资本催生的一波互联网创业热潮即将过去，也有称这一段时间为“资本寒冬”，忽冷忽热是资本市场的运行规律，只有那些抓住机会并且掌握住第一批用户的创业者有机会活下来。后来我离开来一掌了，项目失利，而我却通过这个项目完成了从就业到创业者的身份转变。</p>
-<p>从最初的技术出身，后来机缘巧合让我做了产品经理，再后来经历创业，一步一步发现商业运营的本质是人群运营。而技术和产品只能作为重要的运营的手段，而运营却是围绕着人群进行。没有人群，运营的是什么东西呢？没有运营，如何完成服务和商品的销售？没有服务或商品的销售，自然而然也就没有现金流，没了现金流就不能称之为商业。所以商业的本质还是服务人群，有人的地方便会有各种各样的需求，通过运营手段使服务、商品、消费形成闭环，并且在不断的积累中，获得更多的用户资源。</p>
-<h2 id="机会与风险并存">机会与风险并存</h2><p>中国有15亿人口，没有任何一个公司能将自己的产品覆盖到中国的所有公民。人的需求，却又无外乎衣、食、住、行，健康、学习、工作、旅行……这些需求总归是有限的，但是随着社会的发展，人类的需求又是不断升级的：十年前，早饭豆浆油条豆腐花已经足够了，但今天我们希望吃的更有营养、更健康，所以针对不同的人群出现了“豆浆机”、“蒸蛋器”、“肯德基”等等，所以任何时代都会有自己的独特性，创业者能够通过这些特性去Get√属于自己的人群。也因此，人群是没有黏性的，今天你的产品满足不了他的需求，明天他就会挑选别的更符合自身需求的产品。</p>
-<h2 id="一些想法">一些想法</h2><p>创业的过程也是创造的过程，一些不为人知的产品，通过营销、传达、编故事的方式让更多的人知道甚至流行，从而产品大量的消费和购买。而根本，在于我们如何去发现资源、并且把故事讲的迷人，让人们深信不疑。市场是愚钝的，一切事在人为。</p>
-<p>以人为本，这是这个时代任何（商业、政治）团体发展壮大的前提。</p>
-<h2 id="声明">声明</h2><p>个人臆想，若不慎让您作出错误的决定，不负责任。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运营/">运营</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-我喜爱的网站" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/我喜爱的网站/" class="article-date">
-  	<time datetime="2015-09-02T13:50:43.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/我喜爱的网站/">我喜爱的网站</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="IT技术">IT技术</h1><p><a href="https://packagist.org/" target="_blank" rel="external">The PHP Package Repository</a><br><a href="http://laravel-china.github.io/php-the-right-way/" target="_blank" rel="external">PHP The Right Way</a></p>
-<h1 id="工具">工具</h1><p><a href="http://www.jiankongbao.com/" target="_blank" rel="external">监控宝</a></p>
-<h1 id="设计">设计</h1><p><a href="http://ued.taobao.org/blog/" target="_blank" rel="external">淘宝UED</a><br><a href="http://cdc.tencent.com/" target="_blank" rel="external">腾讯CDC</a><br><a href="http://isux.tencent.com/" target="_blank" rel="external">腾讯ISUX</a><br><a href="http://tgideas.qq.com/" target="_blank" rel="external">腾讯tgideas</a><br><a href="http://mxd.tencent.com/" target="_blank" rel="external">腾讯MXD</a><br><a href="http://jdc.jd.com/" target="_blank" rel="external">京东JDC</a><br><a href="http://mux.alimama.com/" target="_blank" rel="external">阿里MUX</a></p>
-<p><a href="http://since1984.cn/" target="_blank" rel="external">1984 设计 生活 发现新鲜</a></p>
-<h1 id="其他">其他</h1><p><a href="http://www.mifengtd.cn/" target="_blank" rel="external">褪墨｜时间管理</a><br><a href="https://www.v2ex.com/" target="_blank" rel="external">V2EX</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷笔记/">快捷笔记</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/未分类/">未分类</a>
 	</div>
 
 
