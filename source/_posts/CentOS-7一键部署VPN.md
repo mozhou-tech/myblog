@@ -124,4 +124,6 @@ vpn_setup.sh 脚本内容
         echo -e "Username: \033[32m${VPN_USER}\033[0m"
         echo -e "Password: \033[32m${VPN_PASS}\033[0m"
         
+
+        
         
