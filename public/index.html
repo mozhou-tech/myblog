@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 15px;">写作</a> <a href="/tags/创业/" style="font-size: 20px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 15px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 15px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/CentOS/" style="font-size: 13.33px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/写作/" style="font-size: 16.67px;">写作</a> <a href="/tags/创业/" style="font-size: 20px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 16.67px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 16.67px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -237,6 +237,246 @@
 
 
   
+    <article id="post-CentOS-7一键部署VPN" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/18/CentOS-7一键部署VPN/" class="article-date">
+  	<time datetime="2015-12-18T02:47:01.000Z" itemprop="datePublished">2015-12-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/18/CentOS-7一键部署VPN/">CentOS 7一键部署VPN</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考：<a href="https://blog.linuxeye.com/412.html" target="_blank" rel="external">https://blog.linuxeye.com/412.html</a></p>
+<p>从Windows Copy到Linux时，解决/bin/bash^M: bad interpreter: No such file or directory问题</p>
+<pre><code>sed -<span class="tag">i</span> -e <span class="string">'s/\r$//'</span> vpn_setup.sh
+</code></pre><p>vpn_setup.sh 脚本内容</p>
+<pre><code><span class="shebang">#!/bin/bash</span>
+<span class="comment">#</span>
+<span class="comment"># Author:  yeho &lt;lj2007331 AT gmail.com&gt;</span>
+<span class="comment"># Blog:  http://blog.linuxeye.com</span>
+<span class="comment">#</span>
+<span class="comment"># Installs a PPTP VPN-only system for CentOS</span>
+
+<span class="comment"># Check if user is root</span>
+[ $(id -u) != <span class="string">"0"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"Error: You must be root to run this script"</span> &amp;&amp; <span class="built_in">exit</span> <span class="number">1</span>
+
+<span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin
+clear
+<span class="built_in">printf</span> <span class="string">"
+#######################################################################
+#    LNMP/LAMP/LANMP for CentOS/RadHat 5+ Debian 6+ and Ubuntu 12+    #
+# For more information please visit http://blog.linuxeye.com/31.html  #
+#######################################################################
+"</span>
+
+[ ! <span class="operator">-e</span> <span class="string">'/usr/bin/curl'</span> ] &amp;&amp; yum -y install curl
+
+VPN_IP=`curl ipv4.icanhazip.com`
+
+VPN_USER=<span class="string">"linuxeye"</span>
+VPN_PASS=<span class="string">"linuxeye"</span>
+
+VPN_LOCAL=<span class="string">"192.168.0.150"</span>
+VPN_REMOTE=<span class="string">"192.168.0.151-200"</span>
+
+<span class="keyword">while</span> :
+<span class="keyword">do</span>
+        <span class="built_in">echo</span>
+        <span class="built_in">read</span> -p <span class="string">"Please input username: "</span> VPN_USER 
+        [ -n <span class="string">"<span class="variable">$VPN_USER</span>"</span> ] &amp;&amp; <span class="built_in">break</span>
+<span class="keyword">done</span>
+
+<span class="keyword">while</span> :
+<span class="keyword">do</span>
+        <span class="built_in">echo</span>
+        <span class="built_in">read</span> -p <span class="string">"Please input password: "</span> VPN_PASS
+        [ -n <span class="string">"<span class="variable">$VPN_PASS</span>"</span> ] &amp;&amp; <span class="built_in">break</span>
+<span class="keyword">done</span>
+clear
+
+
+<span class="keyword">if</span> [ -n <span class="string">"`grep 'CentOS Linux release 7' /etc/redhat-release`"</span> ];<span class="keyword">then</span>
+        <span class="comment">#CentOS_REL=7</span>
+    <span class="keyword">if</span> [ ! <span class="operator">-e</span> /etc/yum.repos.d/epel.repo ];<span class="keyword">then</span>
+        cat &gt; /etc/yum.repos.d/epel.repo &lt;&lt; EOF
+[epel]
+name=Extra Packages <span class="keyword">for</span> Enterprise Linux <span class="number">7</span> - \<span class="variable">$basearch</span>
+<span class="comment">#baseurl=http://download.fedoraproject.org/pub/epel/7/\$basearch</span>
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-<span class="number">7</span>&amp;arch=\<span class="variable">$basearch</span>
+failovermethod=priority
+enabled=<span class="number">1</span>
+gpgcheck=<span class="number">0</span>
+EOF
+<span class="keyword">fi</span>
+        <span class="keyword">for</span> Package <span class="keyword">in</span> wget make openssl gcc-c++ ppp pptpd iptables iptables-services 
+        <span class="keyword">do</span>
+                yum -y install <span class="variable">$Package</span>
+        <span class="keyword">done</span>
+        <span class="built_in">echo</span> <span class="string">'net.ipv4.ip_forward = 1'</span> &gt;&gt; /etc/sysctl.conf
+<span class="keyword">elif</span> [ -n <span class="string">"`grep 'CentOS release 6' /etc/redhat-release`"</span> ];<span class="keyword">then</span>
+        <span class="comment">#CentOS_REL=6</span>
+        <span class="keyword">for</span> Package <span class="keyword">in</span> wget make openssl gcc-c++ iptables ppp 
+        <span class="keyword">do</span>
+                yum -y install <span class="variable">$Package</span>
+        <span class="keyword">done</span>
+    sed -i <span class="string">'s@net.ipv4.ip_forward.*@net.ipv4.ip_forward = 1@g'</span> /etc/sysctl.conf
+    rpm -Uvh http://poptop.sourceforge.net/yum/stable/rhel6/pptp-release-current.noarch.rpm
+    yum -y install pptpd
+<span class="keyword">else</span>
+        <span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"\033[31mDoes not support this OS, Please contact the author! \033[0m"</span>
+        <span class="built_in">exit</span> <span class="number">1</span>
+<span class="keyword">fi</span>
+
+
+<span class="built_in">echo</span> <span class="string">"1"</span> &gt; /proc/sys/net/ipv4/ip_forward
+
+sysctl -p /etc/sysctl.conf
+
+[ -z <span class="string">"`grep '^localip' /etc/pptpd.conf`"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"localip <span class="variable">$VPN_LOCAL</span>"</span> &gt;&gt; /etc/pptpd.conf <span class="comment"># Local IP address of your VPN server</span>
+[ -z <span class="string">"`grep '^remoteip' /etc/pptpd.conf`"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"remoteip <span class="variable">$VPN_REMOTE</span>"</span> &gt;&gt; /etc/pptpd.conf <span class="comment"># Scope for your home network</span>
+
+<span class="keyword">if</span> [ -z <span class="string">"`grep '^ms-dns' /etc/ppp/options.pptpd`"</span> ];<span class="keyword">then</span>
+    <span class="built_in">echo</span> <span class="string">"ms-dns 8.8.8.8"</span> &gt;&gt; /etc/ppp/options.pptpd <span class="comment"># Google DNS Primary</span>
+    <span class="built_in">echo</span> <span class="string">"ms-dns 209.244.0.3"</span> &gt;&gt; /etc/ppp/options.pptpd <span class="comment"># Level3 Primary</span>
+    <span class="built_in">echo</span> <span class="string">"ms-dns 208.67.222.222"</span> &gt;&gt; /etc/ppp/options.pptpd <span class="comment"># OpenDNS Primary</span>
+<span class="keyword">fi</span>
+
+<span class="built_in">echo</span> <span class="string">"<span class="variable">$VPN_USER</span> pptpd <span class="variable">$VPN_PASS</span> *"</span> &gt;&gt; /etc/ppp/chap-secrets
+
+ETH=`route | grep default | awk <span class="string">'{print $NF}'</span>`
+[ -z <span class="string">"`grep '1723 -j ACCEPT' /etc/sysconfig/iptables`"</span> ] &amp;&amp; iptables -I INPUT <span class="number">4</span> -p tcp -m state --state NEW -m tcp --dport <span class="number">1723</span> -j ACCEPT
+[ -z <span class="string">"`grep 'gre -j ACCEPT' /etc/sysconfig/iptables`"</span> ] &amp;&amp; iptables -I INPUT <span class="number">5</span> -p gre -j ACCEPT 
+iptables -t nat -A POSTROUTING -o <span class="variable">$ETH</span> -j MASQUERADE
+service iptables save
+sed -i <span class="string">'s@^-A INPUT -j REJECT --reject-with icmp-host-prohibited@#-A INPUT -j REJECT --reject-with icmp-host-prohibited@'</span> /etc/sysconfig/iptables 
+sed -i <span class="string">'s@^-A FORWARD -j REJECT --reject-with icmp-host-prohibited@#-A FORWARD -j REJECT --reject-with icmp-host-prohibited@'</span> /etc/sysconfig/iptables 
+service iptables restart
+
+service pptpd restart
+chkconfig pptpd on
+clear
+
+<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"You can now connect to your VPN via your external IP \033[32m<span class="variable">${VPN_IP}</span>\033[0m"</span>
+
+<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"Username: \033[32m<span class="variable">${VPN_USER}</span>\033[0m"</span>
+<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"Password: \033[32m<span class="variable">${VPN_PASS}</span>\033[0m"</span>
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/">VPN</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-CentOS 7下安装MySQL遇到的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/18/CentOS 7下安装MySQL遇到的一些问题/" class="article-date">
+  	<time datetime="2015-12-18T01:16:49.000Z" itemprop="datePublished">2015-12-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/18/CentOS 7下安装MySQL遇到的一些问题/">CentOS 7下安装MySQL遇到的一些问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>部署环境：CentOS下安装MySQL5.6.28。一开始安装MySQL5.7.10也是遇到这个问题。</p>
+<h2 id="改变数据目录后无法启动">改变数据目录后无法启动</h2><p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
+<pre><code>ln <span class="operator">-s</span> /alidata/mysqldata mysql
+<span class="comment">#ln -s 源目录 目录或连接名</span>
+</code></pre><h2 id="数据转移">数据转移</h2><p>以前一直使用Navicat通过数据传输的方式转移或备份数据，但是今天转移数据到正式服时，一直报错并显示</p>
+<pre><code><span class="built_in">Data</span> truncated f<span class="subst">or</span> column <span class="string">`???`</span> ??? <span class="attribute">...</span>
+</code></pre><p>看起来Navicat把数据截断了，后来使用mysqldump转移成功</p>
+<pre><code>mysqldump -u root qjiatrip &gt; backup<span class="class">.sql</span>
+<span class="id">#mysqldump</span> -u 用户名 数据库名 &gt; 备份名.sql
+</code></pre><p>嗯，就是这样。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-来一掌O2O平台技术架构" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -269,8 +509,10 @@
 <h2 id="RESTful风格">RESTful风格</h2><p>前端与后端，所有的数据都是Ajax获取，这也造成了页面卡顿需要加载时间，或许引入缓加载可以减轻这个问题。这么做的好处是，在将来开发安卓和iOS端的时候，没必要再重新做一遍后端开发了。其实在年底的时候，已经发现大多数人采用了这种方式，也有人比我们优化的更好。<br>后来做一个SCM系统时，采用了传统的网页方式，RESTful有以下好处：</p>
 <blockquote>
 <ol>
-<li>减少查询次数，提升并发能力</li>
-<li></li>
+<li>减少查询次数，提升并发能力，提升访问速度</li>
+<li>将来可以与iOS和Android兼容</li>
+<li>简化后台数据存取逻辑，实际是转移到前端去了</li>
+<li>在结合Angularjs等前端MVVM框架的时候，实现但页面应用</li>
 </ol>
 </blockquote>
 <h2 id="基于系统可靠性的考虑">基于系统可靠性的考虑</h2><ol>
@@ -744,135 +986,6 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
 
 
   
-    <article id="post-谈业务，还是谈私交" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/29/谈业务，还是谈私交/" class="article-date">
-  	<time datetime="2015-11-29T09:56:57.000Z" itemprop="datePublished">2015-11-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/29/谈业务，还是谈私交/">谈业务，还是谈私交</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我没谈过什么业务，但听到的一些事情，让我觉得谈业务似乎是很简单的事情。无外乎 <strong>威逼</strong> 、 <strong>利诱</strong>  、 <strong>谈感情</strong> 。跟以前初中时看“成功学教父”陈安之的视频讲的差不多嘛，逃避痛苦和追求快乐是人性的诉求，而“威逼”代表痛苦，“利诱”和“谈感情”代表快乐。当我们都熟知了这些方法论，谈判要素就变成了双方手中的筹码。</p>
-<p>人性中还有一个要素是“贪婪”，归于追求快乐也很勉强吧？这是我们COO从泰国回来后分享的故事。DTAC副总裁，据说是一位泰国美女，打算向中国售卖化妆品，而我们希望拿到DTAC对外谈判的授权或者独家代理或者更低的进货价等等。这足以让这位泰国美女与我们的COO结成同盟，各取所需，这大概就是社会的现实吧？那个对你有所求的人，就是谈判对手的软肋。当然换一个说法也是妥当的，大家互相帮助，哈哈互相帮助。如果你不能给对方带来好处，TA为什么要帮助你？</p>
-<p>当然这也只是谈判桌上一个客观的现象而已，世上还是有很多带来温暖的人。想要成事，首要的还是先学会做人，学会给别人温暖，学会聊的投机，建立私人感情。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-坎坷融资路" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/29/坎坷融资路/" class="article-date">
-  	<time datetime="2015-11-29T07:17:09.000Z" itemprop="datePublished">2015-11-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/29/坎坷融资路/">坎坷融资路</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="缘起">缘起</h2><p>2015年10月26日，我加入了某境外游项目。鉴于对融资过程见闻体会。这是一个已经盈利的项目，一半以上的股东在35岁以上。跟想象的一样，我占了点小股但工资不高，当然我看重的是两年内公司能达到一个不错的规模，或许在南京买一个大一点的房子就变成一件很有可能的事情。就在我加入不久，公司与某天宫签订TS（投资意向书），但他们不会全投，需要我们继续寻找跟投。</p>
-<h2 id="领头">领头</h2><p>在我加入前，就已经初步达成了投资意向，后来他们说我卡的时间点太对了。不久后就签订TS，与某天宫确立领头关系。小VC受个人决定的影响较大，或许并不是足够的客观，公关效果较大。</p>
-<h2 id="约见IDG">约见IDG</h2><p>为了寻找跟投，我们联系了南京融资界的“皮条客”，皮条客给我们介绍了很多家，IDG是其中之一。在常亮眼中，这位皮条客挺“地头蛇”的。IDG是国际顶级投资公司，之前只是在新闻里听说过，没想到我们这么小规模的公司也能碰上这么大的投行公司。作为CTO，融资的事情前期与我并无多大关系，但是我还是要跟着一起看看是怎么回事，哈哈哈。听说，IDG内部认为，融资额少于5000w的都属于早期项目。</p>
-<hr>
-<p>2015年12月7日 更新<br><img src="../attach/IDG给的回复1.jpg" alt="tuppian"><br>从回复上看，IDG的尽调能力可见一斑，每一点都切中要害。一个投资机构的投资水平，体现在分析师的角色身上，对于大型融资机构而言，外围尽调到企业财务、行业能力似乎是基础能力。所以在跟大机构谈融资时，还是实诚点比较好。几点体会：</p>
-<ol>
-<li>做企业需要做好内功，内功不足，还是会被看出来的</li>
-<li>不急着吹牛，先做点什么证明自己所说的</li>
-</ol>
-<h2 id="某牛">某牛</h2><p>听说去年就有过投资意向，但价格太低我们不干，而今年某牛却一直在风头浪尖上。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -883,7 +996,7 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 Tenstone
+    		&copy; 2016 Tenstone
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
