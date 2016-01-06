@@ -1,8 +1,8 @@
-title: CentOS 7下安装MySQL遇到的一些问题
+title: CentOS 7下安装MySQL使用参考
 date: 2015-12-18 09:16:49
 tags: 
-- MySQL
-- CentOS
+- 快捷笔记
+
 categories: IT技术
 ---
 

@@ -1,7 +1,7 @@
 title: CentOS 7一键部署VPN
 date: 2015-12-18 10:47:01
 tags: 
-- VPN 
+- 快捷笔记 
 - CentOS
 
 categories: IT技术

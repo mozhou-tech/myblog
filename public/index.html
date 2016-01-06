@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CentOS/" style="font-size: 13.33px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/写作/" style="font-size: 16.67px;">写作</a> <a href="/tags/创业/" style="font-size: 20px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 16.67px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 16.67px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 13.33px;">写作</a> <a href="/tags/创业/" style="font-size: 16.67px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 13.33px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -212,7 +212,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>PHP 开发者该知道的 5 个 Composer 小技巧<br><a href="https://segmentfault.com/a/1190000000355928" target="_blank" rel="external">https://segmentfault.com/a/1190000000355928</a></p>
+        <h2 id="Composer_两个小技巧">Composer 两个小技巧</h2><p>使用Composer以后，Laravel的开发效率提升了不止一点点</p>
+<ol>
+<li>composer update foo/bar  // 更新单个库</li>
+<li>composer update nothing  // 仅更新composer.lock</li>
+<li>composer require “foo/bar:1.0.0”  // 无需编辑composer.json直接安装库  </li>
+<li>composer dump-autoload –optimize  // 生产环境中优化自动加载，提升性能</li>
+<li>composer config -g repo.packagist   // composer <a href="http://packagist.phpcomposer.com" target="_blank" rel="external">http://packagist.phpcomposer.com</a> 设置国内镜像<a href="http://pkg.phpcomposer.com" target="_blank" rel="external">参考地址</a></li>
+</ol>
 
       
     </div>
@@ -220,7 +227,15 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷笔记/">快捷笔记</a></li></ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -385,7 +400,7 @@ clear
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/">VPN</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷笔记/">快捷笔记</a></li></ul>
 	</div>
 
       
@@ -409,10 +424,10 @@ clear
 
 
   
-    <article id="post-CentOS 7下安装MySQL遇到的一些问题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CentOS-7下安装MySQL使用参考" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/18/CentOS 7下安装MySQL遇到的一些问题/" class="article-date">
+      <a href="/2015/12/18/CentOS-7下安装MySQL使用参考/" class="article-date">
   	<time datetime="2015-12-18T01:16:49.000Z" itemprop="datePublished">2015-12-18</time>
 </a>
     </div>
@@ -426,7 +441,7 @@ clear
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/18/CentOS 7下安装MySQL遇到的一些问题/">CentOS 7下安装MySQL遇到的一些问题</a>
+      <a class="article-title" href="/2015/12/18/CentOS-7下安装MySQL使用参考/">CentOS 7下安装MySQL使用参考</a>
     </h1>
   
 
@@ -453,7 +468,7 @@ clear
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷笔记/">快捷笔记</a></li></ul>
 	</div>
 
       
@@ -519,7 +534,7 @@ clear
 <li>使用事务管理</li>
 <li>定期的数据备份（每天一次系统镜像）</li>
 </ol>
-<h2 id="难点">难点</h2><p>整个系统没有太大的技术难点，要说比较麻烦的地方，就是时间块的管理吧。每个推拿师的可接单时间，都被划分成块存储在可用时间表里，这部分当时有点过度设计了，但是在做的时候，并不能搞清楚需要做成什么样子。</p>
+<h2 id="总结">总结</h2><p>整个系统没有太大的技术难点，要说比较麻烦的地方，就是时间块的管理吧。每个推拿师的可接单时间，都被划分成块存储在可用时间表里，这部分当时有点过度设计了，但是在做的时候，并不能搞清楚需要做成什么样子。</p>
 
       
     </div>
@@ -737,64 +752,6 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
 
 
   
-    <article id="post-我妈一定要买安利的万能锅" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/02/我妈一定要买安利的万能锅/" class="article-date">
-  	<time datetime="2015-12-02T09:24:16.000Z" itemprop="datePublished">2015-12-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/02/我妈一定要买安利的万能锅/">我妈一定要买安利的万能锅</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索熊“寻人启事”/">搜索熊“寻人启事”</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-寻人启事" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -963,6 +920,67 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索熊“寻人启事”/">搜索熊“寻人启事”</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/随笔/">随笔</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-谈业务，还是谈私交" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/29/谈业务，还是谈私交/" class="article-date">
+  	<time datetime="2015-11-29T09:56:57.000Z" itemprop="datePublished">2015-11-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/29/谈业务，还是谈私交/">谈业务，还是谈私交</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我没谈过什么业务，但听到的一些事情，让我觉得谈业务似乎是很简单的事情。无外乎 <strong>威逼</strong> 、 <strong>利诱</strong>  、 <strong>谈感情</strong> 。跟以前初中时看“成功学教父”陈安之的视频讲的差不多嘛，逃避痛苦和追求快乐是人性的诉求，而“威逼”代表痛苦，“利诱”和“谈感情”代表快乐。当我们都熟知了这些方法论，谈判要素就变成了双方手中的筹码。</p>
+<p>人性中还有一个要素是“贪婪”，归于追求快乐也很勉强吧？这是我们COO从泰国回来后分享的故事。DTAC副总裁，据说是一位泰国美女，打算向中国售卖化妆品，而我们希望拿到DTAC对外谈判的授权或者独家代理或者更低的进货价等等。这足以让这位泰国美女与我们的COO结成同盟，各取所需，这大概就是社会的现实吧？那个对你有所求的人，就是谈判对手的软肋。当然换一个说法也是妥当的，大家互相帮助，哈哈互相帮助。如果你不能给对方带来好处，TA为什么要帮助你？</p>
+<p>当然这也只是谈判桌上一个客观的现象而已，世上还是有很多带来温暖的人。想要成事，首要的还是先学会做人，学会给别人温暖，学会聊的投机，建立私人感情。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li></ul>
 	</div>
 
       
