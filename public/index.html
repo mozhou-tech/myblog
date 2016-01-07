@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 13.33px;">写作</a> <a href="/tags/创业/" style="font-size: 16.67px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 13.33px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 13.33px;">写作</a> <a href="/tags/创业/" style="font-size: 16.67px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/快速笔记/" style="font-size: 10px;">快速笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 13.33px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -185,6 +185,161 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-LiveReload实现浏览器自动刷新" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/06/LiveReload实现浏览器自动刷新/" class="article-date">
+  	<time datetime="2016-01-06T08:47:28.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/06/LiveReload实现浏览器自动刷新/">LiveReload实现浏览器自动刷新</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="再也不用按F5，节省了不少时间">再也不用按F5，节省了不少时间</h2><p>昨天突然阅读到一篇文章<a href="http://andremadarang.com/livereload-and-browsersync-with-laravel/" target="_blank" rel="external">LiveReload admin Browsersync with Laravel</a>，于是乎发现了两个不错的前端开发辅助项目<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>和<a href="http://livereload.com/" target="_blank" rel="external">LiveReload</a>。</p>
+<h2 id="LiveReload">LiveReload</h2><ol>
+<li><p>目前使用的是PhpStorm编辑器，使用的是Laravel，所以配置文件可能和gulp.js-livereload不同，以下是gulpfile.js配置详细：</p>
+<pre><code>var elixir = require<span class="list">(<span class="quoted">'laravel-elixir</span>')</span><span class="comment">;</span>
+    require<span class="list">(<span class="quoted">'laravel-elixir-livereload</span>')</span><span class="comment">;       </span>
+    elixir<span class="list">(<span class="keyword">function</span> <span class="list">(<span class="keyword">mix</span>)</span> {
+    mix.livereload<span class="list">()</span><span class="comment">;</span>
+})</span><span class="comment">;</span>
+</code></pre></li>
+<li><p>安装<a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=zh-CN" target="_blank" rel="external">Chrome插件</a></p>
+</li>
+<li><p>如果你没有使用Laravel，那么请参考<a href="https://cnodejs.org/topic/53427d16dc556e3b3901861e" target="_blank" rel="external">中文资料</a>，对应的grulpfile.js：</p>
+<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>);
+gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{    <span class="comment">// 这里的watch，是自定义的，写成live或者别的也行</span>
+    <span class="keyword">var</span> server = livereload();
+    <span class="comment">// app/**/*.*的意思是 app文件夹下的 任何文件夹 的 任何文件</span>
+    gulp.watch(<span class="string">'app/**/*.*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>{
+        server.changed(file.path);
+    }); 
+});
+</code></pre></li>
+<li><p>执行gulp watch并点击浏览器上的“Enable Livereload”开始你的前端开发新旅程吧！</p>
+</li>
+</ol>
+<h3 id="提示：">提示：</h3><p>网页要使用服务器打开，如果你使用laravel，则运行</p>
+<pre><code><span class="title">php</span> artisan serve
+</code></pre><p>如果是在线调试，打开你对应的页面，只要在对应的页面开启“Livereload”插件即可。        </p>
+<h2 id="Browsersync">Browsersync</h2><p>这是从官网翻译来的介绍，</p>
+<blockquote>
+<p>Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。您可以想象一下：“假设您的桌子上有pc、ipad、iphone、android等设备，同时打开了您需要调试的页面，当您使用browsersync后，您的任何一次代码保存，以上的设备都会同时显示您的改动”。无论您是前端还是后端工程师，使用它将提高您30%的工作效率。<br>想比你已经心动了吧？稍后奉上详细的配置方法。</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快速笔记/">快速笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Nodejs-NPM的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/05/Nodejs-NPM的使用/" class="article-date">
+  	<time datetime="2016-01-05T01:11:59.000Z" itemprop="datePublished">2016-01-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/05/Nodejs-NPM的使用/">Nodejs NPM的使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>npm install b –save會幫你安裝並添加依赖</p>
+<pre><code>npm config <span class="built_in">set</span> strict-ssl <span class="constant">false</span>            <span class="comment"> //关闭npm的HTTPS</span>
+npm config <span class="built_in">set</span> registry <span class="string">"http://registry.npmjs.org/"</span>   <span class="comment"> //设置npm的获取地址</span>
+npm config <span class="built_in">set</span> proxy=<span class="keyword">http</span>://代理服务器ip:代理服务器端口 
+
+npm config <span class="built_in">delete</span> <span class="keyword">http</span>-proxy   <span class="comment"> // 清除npm代理</span>
+npm config <span class="built_in">delete</span> <span class="keyword">https</span>-proxy
+</code></pre><p><a href="https://github.com/nimojs/blog/issues/20" target="_blank" rel="external">淘宝NPM镜像</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷笔记/">快捷笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Composer和Laravel的一些小技巧" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -849,129 +1004,6 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
       
         <p>上班的第一个月，我并不关注业绩，但在他们的谈话中，我似乎感觉到最近这三个月的数据并不理想。听其原因，是同质化竞争日趋严重，似乎每个行业都是这样，先驱者赚得第一桶金，当更多企业加入行业竞争的时候，价格战就开始了。</p>
 <p>突然想起来知乎上关于小米Note3发布会的一个讨论，<a href="http://www.zhihu.com/question/37836708" target="_blank" rel="external">如何评价雷军在小米Note3发布会上落泪</a>。价格战是市场竞争的一剂毒药，当然从某种角度消费者是价格战的受益者。雷军说了句，友商是傻逼，从中足以体会他对手机行业现状的无奈。乐视在广告中已打出“生态补贴硬件，售价低于硬件成本”的广告词，甚至在官网打出了硬件BOM表。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-搜索聚合的时代" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/30/搜索聚合的时代/" class="article-date">
-  	<time datetime="2015-11-30T09:55:31.000Z" itemprop="datePublished">2015-11-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/30/搜索聚合的时代/">搜索聚合的时代</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言">前言</h2><p>早在几年以前，我就非常想写一本跟搜索引擎有关的书，因为搜索引擎很有趣，我用它学会了现在掌握的大多数技能。或许跟你想的不太一样，我说的不是百度，也不特指Google，而是搜索的技巧和习惯。</p>
-<p>Web是1992年出现的，1993年就有了Web搜索引擎，不过那时候还没有多少Web页面可供搜索。所以杨致远和大卫·费罗凭借一个人工编辑的网址站，就完成了整个互联网的导航，并因此创办了Yahoo!。正是因为搜索引擎的出现，才让互联网冲出了黑暗。</p>
-<p>现在搜索随手可做，</p>
-<p>“搜索”被所有具有互联网使用经验的人熟知，而且每天都在使用。<br>信息时代渐行渐远逐渐藏进我们的生活，利用各种方法挖掘信息的能力愈发重要。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索熊“寻人启事”/">搜索熊“寻人启事”</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-谈业务，还是谈私交" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/29/谈业务，还是谈私交/" class="article-date">
-  	<time datetime="2015-11-29T09:56:57.000Z" itemprop="datePublished">2015-11-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/29/谈业务，还是谈私交/">谈业务，还是谈私交</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我没谈过什么业务，但听到的一些事情，让我觉得谈业务似乎是很简单的事情。无外乎 <strong>威逼</strong> 、 <strong>利诱</strong>  、 <strong>谈感情</strong> 。跟以前初中时看“成功学教父”陈安之的视频讲的差不多嘛，逃避痛苦和追求快乐是人性的诉求，而“威逼”代表痛苦，“利诱”和“谈感情”代表快乐。当我们都熟知了这些方法论，谈判要素就变成了双方手中的筹码。</p>
-<p>人性中还有一个要素是“贪婪”，归于追求快乐也很勉强吧？这是我们COO从泰国回来后分享的故事。DTAC副总裁，据说是一位泰国美女，打算向中国售卖化妆品，而我们希望拿到DTAC对外谈判的授权或者独家代理或者更低的进货价等等。这足以让这位泰国美女与我们的COO结成同盟，各取所需，这大概就是社会的现实吧？那个对你有所求的人，就是谈判对手的软肋。当然换一个说法也是妥当的，大家互相帮助，哈哈互相帮助。如果你不能给对方带来好处，TA为什么要帮助你？</p>
-<p>当然这也只是谈判桌上一个客观的现象而已，世上还是有很多带来温暖的人。想要成事，首要的还是先学会做人，学会给别人温暖，学会聊的投机，建立私人感情。</p>
 
       
     </div>
