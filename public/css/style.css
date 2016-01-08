@@ -2289,13 +2289,24 @@ pre .css ~ * .id {
   height: 100%;
   overflow: hidden;
 }
-ul.search-result-list {
+#site_search input {
+  height: 24px;
+  margin-top: 20px;
+  width: 98%;
+  font-family: Microsoft YaHei;
+  font-size: 100%;
+  padding: 3px 8px;
+}
+#site_search ul.search-result-list {
   padding-left: 10px;
 }
-a.search-result-title {
+#site_search a.search-result-title {
   font-weight: bold;
 }
-em.search-keyword {
+#site_search p.search-result {
+  color: #555;
+}
+#site_search em.search-keyword {
   border-bottom: 1px dashed #4088b8;
   font-weight: bold;
 }
