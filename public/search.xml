@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[APICloud和ionicFramework的比较]]></title>
+      <url>http://tenstone.me/2016/01/07/APICloud%E5%92%8CionicFramework%E7%9A%84%E6%AF%94%E8%BE%83/</url>
+      <content type="html"><![CDATA[<p>一直鄙视国产厂商，但这一次比较狠狠的打了自己一记巴掌。<br>APICloud的api对象封装了常用的APP交互，使其封装出来的APP和原生开发的APP一样流畅。虽然打包方式和原理和ionic一样都是用了<a href="http://cordova.apache.org" target="_blank" rel="external">Cordova</a>，但是APICloud有下列的优点：</p>
+<blockquote>
+<ol>
+<li>APICloud把常用的交互操作和支付宝等模块都封装进去了</li>
+<li>打包服务器在云端实现了，不必再自己倒腾编译环境</li>
+</ol>
+</blockquote>
+<p>这样就使APP混合开发的弊端去掉大半，优点还是一件不少，足以满足大多数的开发需要。以后这种开发模式必将占领APP开发领域的半壁江山。<br>不过，我还是想尝试一下，把ionic和apiCloud的优势结合起来。</p>
+<p>给做好事的公司打个广告：<a href="http://apicloud.com" target="_blank" rel="external">APICloud</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[LiveReload实现浏览器自动刷新]]></title>
+      <url>http://tenstone.me/2016/01/06/LiveReload%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/</url>
+      <content type="html"><![CDATA[<h2 id="再也不用按F5，节省了不少时间">再也不用按F5，节省了不少时间</h2><p>昨天突然阅读到一篇文章<a href="http://andremadarang.com/livereload-and-browsersync-with-laravel/" target="_blank" rel="external">LiveReload admin Browsersync with Laravel</a>，于是乎发现了两个不错的前端开发辅助项目<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>和<a href="http://livereload.com/" target="_blank" rel="external">LiveReload</a>。</p>
+<h2 id="LiveReload">LiveReload</h2><ol>
+<li><p>目前使用的是PhpStorm编辑器，使用的是Laravel，所以配置文件可能和gulp.js-livereload不同，以下是gulpfile.js配置详细：</p>
+<pre><code>var elixir = require<span class="list">(<span class="quoted">'laravel-elixir</span>')</span><span class="comment">;</span>
+    require<span class="list">(<span class="quoted">'laravel-elixir-livereload</span>')</span><span class="comment">;       </span>
+    elixir<span class="list">(<span class="keyword">function</span> <span class="list">(<span class="keyword">mix</span>)</span> {
+    mix.livereload<span class="list">()</span><span class="comment">;</span>
+})</span><span class="comment">;</span>
+</code></pre></li>
+<li><p>安装<a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=zh-CN" target="_blank" rel="external">Chrome插件</a></p>
+</li>
+<li><p>如果你没有使用Laravel，那么请参考<a href="https://cnodejs.org/topic/53427d16dc556e3b3901861e" target="_blank" rel="external">中文资料</a>，对应的grulpfile.js：</p>
+<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>);
+gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{    <span class="comment">// 这里的watch，是自定义的，写成live或者别的也行</span>
+    <span class="keyword">var</span> server = livereload();
+    <span class="comment">// app/**/*.*的意思是 app文件夹下的 任何文件夹 的 任何文件</span>
+    gulp.watch(<span class="string">'app/**/*.*'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>{
+        server.changed(file.path);
+    }); 
+});
+</code></pre></li>
+<li><p>执行gulp watch并点击浏览器上的“Enable Livereload”开始你的前端开发新旅程吧！</p>
+</li>
+</ol>
+<h3 id="提示：">提示：</h3><p>网页要使用服务器打开，如果你使用laravel，则运行</p>
+<pre><code><span class="title">php</span> artisan serve
+</code></pre><p>如果是在线调试，打开你对应的页面，只要在对应的页面开启“Livereload”插件即可。        </p>
+<h2 id="Browsersync">Browsersync</h2><p>这是从官网翻译来的介绍，</p>
+<blockquote>
+<p>Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。您可以想象一下：“假设您的桌子上有pc、ipad、iphone、android等设备，同时打开了您需要调试的页面，当您使用browsersync后，您的任何一次代码保存，以上的设备都会同时显示您的改动”。无论您是前端还是后端工程师，使用它将提高您30%的工作效率。</p>
+</blockquote>
+<p>想必你已经心动了吧？稍后奉上详细的配置方法。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Nodejs NPM的使用]]></title>
+      <url>http://tenstone.me/2016/01/05/Nodejs-NPM%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>npm install b –save會幫你安裝並添加依赖</p>
+<pre><code>npm config <span class="built_in">set</span> strict-ssl <span class="constant">false</span>            <span class="comment"> //关闭npm的HTTPS</span>
+npm config <span class="built_in">set</span> registry <span class="string">"http://registry.npmjs.org/"</span>   <span class="comment"> //设置npm的获取地址</span>
+npm config <span class="built_in">set</span> proxy=<span class="keyword">http</span>://代理服务器ip:代理服务器端口 
+
+npm config <span class="built_in">delete</span> <span class="keyword">http</span>-proxy   <span class="comment"> // 清除npm代理</span>
+npm config <span class="built_in">delete</span> <span class="keyword">https</span>-proxy
+</code></pre><p><a href="https://github.com/nimojs/blog/issues/20" target="_blank" rel="external">淘宝NPM镜像</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Composer和Laravel的一些小技巧]]></title>
+      <url>http://tenstone.me/2015/12/21/Composer%E5%92%8CLaravel%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<h2 id="Composer_两个小技巧">Composer 两个小技巧</h2><p>使用Composer以后，Laravel的开发效率提升了不止一点点</p>
+<ol>
+<li>composer update foo/bar  // 更新单个库</li>
+<li>composer update nothing  // 仅更新composer.lock</li>
+<li>composer require “foo/bar:1.0.0”  // 无需编辑composer.json直接安装库  </li>
+<li>composer dump-autoload –optimize  // 生产环境中优化自动加载，提升性能</li>
+<li>composer config -g repo.packagist   // composer <a href="http://packagist.phpcomposer.com" target="_blank" rel="external">http://packagist.phpcomposer.com</a> 设置国内镜像<a href="http://pkg.phpcomposer.com" target="_blank" rel="external">参考地址</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CentOS 7一键部署VPN]]></title>
+      <url>http://tenstone.me/2015/12/18/CentOS-7%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2VPN/</url>
+      <content type="html"><![CDATA[<p>参考：<a href="https://blog.linuxeye.com/412.html" target="_blank" rel="external">https://blog.linuxeye.com/412.html</a></p>
+<p>从Windows Copy到Linux时，解决/bin/bash^M: bad interpreter: No such file or directory问题</p>
+<pre><code>sed -<span class="tag">i</span> -e <span class="string">'s/\r$//'</span> vpn_setup.sh
+</code></pre><p>vpn_setup.sh 脚本内容</p>
+<pre><code><span class="shebang">#!/bin/bash</span>
+<span class="comment">#</span>
+<span class="comment"># Author:  yeho &lt;lj2007331 AT gmail.com&gt;</span>
+<span class="comment"># Blog:  http://blog.linuxeye.com</span>
+<span class="comment">#</span>
+<span class="comment"># Installs a PPTP VPN-only system for CentOS</span>
+
+<span class="comment"># Check if user is root</span>
+[ $(id -u) != <span class="string">"0"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"Error: You must be root to run this script"</span> &amp;&amp; <span class="built_in">exit</span> <span class="number">1</span>
+
+<span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin
+clear
+<span class="built_in">printf</span> <span class="string">"
+#######################################################################
+#    LNMP/LAMP/LANMP for CentOS/RadHat 5+ Debian 6+ and Ubuntu 12+    #
+# For more information please visit http://blog.linuxeye.com/31.html  #
+#######################################################################
+"</span>
+
+[ ! <span class="operator">-e</span> <span class="string">'/usr/bin/curl'</span> ] &amp;&amp; yum -y install curl
+
+VPN_IP=`curl ipv4.icanhazip.com`
+
+VPN_USER=<span class="string">"linuxeye"</span>
+VPN_PASS=<span class="string">"linuxeye"</span>
+
+VPN_LOCAL=<span class="string">"192.168.0.150"</span>
+VPN_REMOTE=<span class="string">"192.168.0.151-200"</span>
+
+<span class="keyword">while</span> :
+<span class="keyword">do</span>
+        <span class="built_in">echo</span>
+        <span class="built_in">read</span> -p <span class="string">"Please input username: "</span> VPN_USER 
+        [ -n <span class="string">"<span class="variable">$VPN_USER</span>"</span> ] &amp;&amp; <span class="built_in">break</span>
+<span class="keyword">done</span>
+
+<span class="keyword">while</span> :
+<span class="keyword">do</span>
+        <span class="built_in">echo</span>
+        <span class="built_in">read</span> -p <span class="string">"Please input password: "</span> VPN_PASS
+        [ -n <span class="string">"<span class="variable">$VPN_PASS</span>"</span> ] &amp;&amp; <span class="built_in">break</span>
+<span class="keyword">done</span>
+clear
+
+
+<span class="keyword">if</span> [ -n <span class="string">"`grep 'CentOS Linux release 7' /etc/redhat-release`"</span> ];<span class="keyword">then</span>
+        <span class="comment">#CentOS_REL=7</span>
+    <span class="keyword">if</span> [ ! <span class="operator">-e</span> /etc/yum.repos.d/epel.repo ];<span class="keyword">then</span>
+        cat &gt; /etc/yum.repos.d/epel.repo &lt;&lt; EOF
+[epel]
+name=Extra Packages <span class="keyword">for</span> Enterprise Linux <span class="number">7</span> - \<span class="variable">$basearch</span>
+<span class="comment">#baseurl=http://download.fedoraproject.org/pub/epel/7/\$basearch</span>
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-<span class="number">7</span>&amp;arch=\<span class="variable">$basearch</span>
+failovermethod=priority
+enabled=<span class="number">1</span>
+gpgcheck=<span class="number">0</span>
+EOF
+<span class="keyword">fi</span>
+        <span class="keyword">for</span> Package <span class="keyword">in</span> wget make openssl gcc-c++ ppp pptpd iptables iptables-services 
+        <span class="keyword">do</span>
+                yum -y install <span class="variable">$Package</span>
+        <span class="keyword">done</span>
+        <span class="built_in">echo</span> <span class="string">'net.ipv4.ip_forward = 1'</span> &gt;&gt; /etc/sysctl.conf
+<span class="keyword">elif</span> [ -n <span class="string">"`grep 'CentOS release 6' /etc/redhat-release`"</span> ];<span class="keyword">then</span>
+        <span class="comment">#CentOS_REL=6</span>
+        <span class="keyword">for</span> Package <span class="keyword">in</span> wget make openssl gcc-c++ iptables ppp 
+        <span class="keyword">do</span>
+                yum -y install <span class="variable">$Package</span>
+        <span class="keyword">done</span>
+    sed -i <span class="string">'s@net.ipv4.ip_forward.*@net.ipv4.ip_forward = 1@g'</span> /etc/sysctl.conf
+    rpm -Uvh http://poptop.sourceforge.net/yum/stable/rhel6/pptp-release-current.noarch.rpm
+    yum -y install pptpd
+<span class="keyword">else</span>
+        <span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"\033[31mDoes not support this OS, Please contact the author! \033[0m"</span>
+        <span class="built_in">exit</span> <span class="number">1</span>
+<span class="keyword">fi</span>
+
+
+<span class="built_in">echo</span> <span class="string">"1"</span> &gt; /proc/sys/net/ipv4/ip_forward
+
+sysctl -p /etc/sysctl.conf
+
+[ -z <span class="string">"`grep '^localip' /etc/pptpd.conf`"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"localip <span class="variable">$VPN_LOCAL</span>"</span> &gt;&gt; /etc/pptpd.conf <span class="comment"># Local IP address of your VPN server</span>
+[ -z <span class="string">"`grep '^remoteip' /etc/pptpd.conf`"</span> ] &amp;&amp; <span class="built_in">echo</span> <span class="string">"remoteip <span class="variable">$VPN_REMOTE</span>"</span> &gt;&gt; /etc/pptpd.conf <span class="comment"># Scope for your home network</span>
+
+<span class="keyword">if</span> [ -z <span class="string">"`grep '^ms-dns' /etc/ppp/options.pptpd`"</span> ];<span class="keyword">then</span>
+    <span class="built_in">echo</span> <span class="string">"ms-dns 8.8.8.8"</span> &gt;&gt; /etc/ppp/options.pptpd <span class="comment"># Google DNS Primary</span>
+    <span class="built_in">echo</span> <span class="string">"ms-dns 209.244.0.3"</span> &gt;&gt; /etc/ppp/options.pptpd <span class="comment"># Level3 Primary</span>
+    <span class="built_in">echo</span> <span class="string">"ms-dns 208.67.222.222"</span> &gt;&gt; /etc/ppp/options.pptpd <span class="comment"># OpenDNS Primary</span>
+<span class="keyword">fi</span>
+
+<span class="built_in">echo</span> <span class="string">"<span class="variable">$VPN_USER</span> pptpd <span class="variable">$VPN_PASS</span> *"</span> &gt;&gt; /etc/ppp/chap-secrets
+
+ETH=`route | grep default | awk <span class="string">'{print $NF}'</span>`
+[ -z <span class="string">"`grep '1723 -j ACCEPT' /etc/sysconfig/iptables`"</span> ] &amp;&amp; iptables -I INPUT <span class="number">4</span> -p tcp -m state --state NEW -m tcp --dport <span class="number">1723</span> -j ACCEPT
+[ -z <span class="string">"`grep 'gre -j ACCEPT' /etc/sysconfig/iptables`"</span> ] &amp;&amp; iptables -I INPUT <span class="number">5</span> -p gre -j ACCEPT 
+iptables -t nat -A POSTROUTING -o <span class="variable">$ETH</span> -j MASQUERADE
+service iptables save
+sed -i <span class="string">'s@^-A INPUT -j REJECT --reject-with icmp-host-prohibited@#-A INPUT -j REJECT --reject-with icmp-host-prohibited@'</span> /etc/sysconfig/iptables 
+sed -i <span class="string">'s@^-A FORWARD -j REJECT --reject-with icmp-host-prohibited@#-A FORWARD -j REJECT --reject-with icmp-host-prohibited@'</span> /etc/sysconfig/iptables 
+service iptables restart
+
+service pptpd restart
+chkconfig pptpd on
+clear
+
+<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"You can now connect to your VPN via your external IP \033[32m<span class="variable">${VPN_IP}</span>\033[0m"</span>
+
+<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"Username: \033[32m<span class="variable">${VPN_USER}</span>\033[0m"</span>
+<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"Password: \033[32m<span class="variable">${VPN_PASS}</span>\033[0m"</span>
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CentOS 7下安装MySQL使用参考]]></title>
+      <url>http://tenstone.me/2015/12/18/CentOS-7%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83/</url>
+      <content type="html"><![CDATA[<p>部署环境：CentOS下安装MySQL5.6.28。一开始安装MySQL5.7.10也是遇到这个问题。</p>
+<h2 id="改变数据目录后无法启动">改变数据目录后无法启动</h2><p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
+<pre><code>ln <span class="operator">-s</span> /alidata/mysqldata mysql
+<span class="comment">#ln -s 源目录 目录或连接名</span>
+</code></pre><h2 id="数据转移">数据转移</h2><p>以前一直使用Navicat通过数据传输的方式转移或备份数据，但是今天转移数据到正式服时，一直报错并显示</p>
+<pre><code><span class="built_in">Data</span> truncated f<span class="subst">or</span> column <span class="string">`???`</span> ??? <span class="attribute">...</span>
+</code></pre><p>看起来Navicat把数据截断了，后来使用mysqldump转移成功</p>
+<pre><code>mysqldump -u root qjiatrip &gt; backup<span class="class">.sql</span>
+<span class="id">#mysqldump</span> -u 用户名 数据库名 &gt; 备份名.sql
+</code></pre><p>嗯，就是这样。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[来一掌O2O平台技术架构]]></title>
+      <url>http://tenstone.me/2015/12/04/%E6%9D%A5%E4%B8%80%E6%8E%8CO2O%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/</url>
+      <content type="html"><![CDATA[<p>来一掌CTO还是我人生路上还是比较重要的一个角色。留下技术笔记，供后来回忆，也给大家用来参考。</p>
+<h2 id="技术框架">技术框架</h2><p>后台：CentOS、Nginx、PHP、MySQL<br>前端：Angularjs<br>PHP framework：Laravel<br>选择前端框架的时候，纠结了好一整子，错过了ionicframework。后来发现企查查把这个基于Angularjs的框架用的很好，所以我在自己的另一个“灸法速查”项目中用了起来，效率还是挺高的。</p>
+<h2 id="说说Modern_PHP">说说Modern PHP</h2><p>后来才知道更多人用的是PHP5.3以前的版本，当时花了很多时间找到这个Laravel框架，14年底刚刚开始在国内流行，但是在国外已经风生水气了。一个最大的好处是借鉴了Linux的包管理机制，在<a href="http://packagist.org" target="_blank" rel="external">packagist.org</a>可以找到大多数你需要开发，但是已经有人做好了的功能。所需要做的，就是把包名加入composer.json，执行php composer.phar update，然后参照文档编写。<br>如果你想更深入的了解Modern PHP，可以Star这个仓库：<a href="https://github.com/laravel-china/php-the-right-way" target="_blank" rel="external">https://github.com/laravel-china/php-the-right-way</a>。</p>
+<h2 id="RESTful风格">RESTful风格</h2><p>前端与后端，所有的数据都是Ajax获取，这也造成了页面卡顿需要加载时间，或许引入缓加载可以减轻这个问题。这么做的好处是，在将来开发安卓和iOS端的时候，没必要再重新做一遍后端开发了。其实在年底的时候，已经发现大多数人采用了这种方式，也有人比我们优化的更好。<br>后来做一个SCM系统时，采用了传统的网页方式，RESTful有以下好处：</p>
+<blockquote>
+<ol>
+<li>减少查询次数，提升并发能力，提升访问速度</li>
+<li>将来可以与iOS和Android兼容</li>
+<li>简化后台数据存取逻辑，实际是转移到前端去了</li>
+<li>在结合Angularjs等前端MVVM框架的时候，实现但页面应用</li>
+</ol>
+</blockquote>
+<h2 id="基于系统可靠性的考虑">基于系统可靠性的考虑</h2><ol>
+<li>使用事务管理</li>
+<li>定期的数据备份（每天一次系统镜像）</li>
+</ol>
+<h2 id="总结">总结</h2><p>整个系统没有太大的技术难点，要说比较麻烦的地方，就是时间块的管理吧。每个推拿师的可接单时间，都被划分成块存储在可用时间表里，这部分当时有点过度设计了，但是在做的时候，并不能搞清楚需要做成什么样子。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git自动化部署的研究]]></title>
+      <url>http://tenstone.me/2015/12/04/Git%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E7%9A%84%E7%A0%94%E7%A9%B6/</url>
+      <content type="html"><![CDATA[<p>在来一掌时使用的手动Git部署脚本</p>
+<pre><code><span class="shebang">#!/bin/sh</span>
+<span class="built_in">echo</span> <span class="string">'Starting Deployment...'</span>
+<span class="built_in">cd</span> /alidata/wwwroot/laiyizhang_v2
+sudo -u apache git reset --hard
+sudo -u apache git pull git@bitbucket.org:laiyizhang/laiyizhang_v2.git master
+
+gulp mobile-lib-js
+gulp mobile-app-js
+gulp mobile-app-css
+
+php composer.phar dump-autoload
+php artisan cache:clear
+php artisan route:cache
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Nginx 常用配置]]></title>
+      <url>http://tenstone.me/2015/12/04/Nginx-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<p>收集一些常用的Nginx配置方法，具体说明见注释。</p>
+<ol>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">HTTP访问控制(CORS)</a></li>
+<li><a href="http://enable-cors.org/server_nginx.html" target="_blank" rel="external">CORS on Nginx 官方配置</a></li>
+</ol>
+<pre><code><span class="title">location</span> / {
+    <span class="title">index</span>  index.php index.html index.htm;
+    <span class="comment"># 隐藏index.php</span>
+    <span class="title">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php<span class="variable">$is_args</span><span class="variable">$query_string</span>;
+    <span class="comment"># CORS 预请求</span>
+    <span class="title">if</span> (<span class="variable">$request_method</span> = <span class="string">'OPTIONS'</span>) {
+        <span class="title">add_header</span> Access-Control-Allow-Origin *;
+        <span class="title">add_header</span> Access-Control-Allow-Credentials <span class="built_in">true</span>;
+        <span class="title">add_header</span> Access-Control-Allow-Methods <span class="string">'GET, POST, OPTIONS'</span>;
+        <span class="title">add_header</span> <span class="string">'Access-Control-Allow-Headers'</span> <span class="string">'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type'</span>;
+        <span class="title">return</span> <span class="number">200</span>;
+    }
+}
+<span class="comment"># 配置字体可以跨站调用</span>
+<span class="title">location</span> <span class="regexp">~* \.(eot|ttf|woff|svg)$</span> {
+    <span class="title">add_header</span> Access-Control-Allow-Origin *;
+}
+
+ <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+ <span class="comment">#</span>
+ <span class="title">location</span> <span class="regexp">~ \.php$</span> {
+    <span class="title">fastcgi_pass</span>   <span class="number">127.0.0.1:9000</span>;
+    <span class="title">fastcgi_index</span>  index.php;
+    <span class="title">fastcgi_param</span>  SCRIPT_FILENAME  <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;
+    <span class="title">include</span>        fastcgi_params;
+ }
+</code></pre><ol>
+<li>配置Nginx缓存，加速访问<a href="http://nginx.org/en/docs/http/ngx_http_headers_module.html" target="_blank" rel="external">官方参考</a></li>
+</ol>
+<pre><code><span class="comment"># cache.appcache, your document html and data</span>
+location ~* \.(?<span class="symbol">:manifest|appcache|html?|xml|json</span>)<span class="variable">$ </span>{
+  expires -<span class="number">1</span>;
+  access_log logs/static.log;
+}
+
+<span class="comment"># Feed</span>
+location ~* \.(?<span class="symbol">:rss|atom</span>)<span class="variable">$ </span>{
+  expires <span class="number">1</span>h;
+  add_header <span class="constant">Cache-Control </span><span class="string">"public"</span>;
+}
+
+<span class="comment"># Media: images, icons, video, audio, HTC</span>
+location ~* \.(?<span class="symbol">:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc</span>)<span class="variable">$ </span>{
+  expires <span class="number">1</span>M;
+  access_log off;
+  add_header <span class="constant">Cache-Control </span><span class="string">"public"</span>;
+}
+
+<span class="comment"># CSS and Javascript</span>
+location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </span>{
+  expires <span class="number">1</span>y;
+  access_log off;
+  add_header <span class="constant">Cache-Control </span><span class="string">"public"</span>;
+}
+
+<span class="comment"># WebFonts</span>
+<span class="comment"># If you are NOT using cross-domain-fonts.conf, uncomment the following directive</span>
+<span class="comment"># location ~* \.(?:ttf|ttc|otf|eot|woff|woff2)$ {</span>
+<span class="comment">#  expires 1M;</span>
+<span class="comment">#  access_log off;</span>
+<span class="comment">#  add_header Cache-Control "public";</span>
+<span class="comment"># }</span>
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[寻人启事]]></title>
+      <url>http://tenstone.me/2015/12/02/%E5%AF%BB%E4%BA%BA%E5%90%AF%E4%BA%8B/</url>
+      <content type="html"><![CDATA[<p>那时我还在Q旅行做CTO，公司正在策划一款“智能旅行”的App，其中一个很重要的功能是“智能行程规划”，当时智能行程规划的技术尚不成熟，成熟的产品更是寥寥无几，早期阶段通过各种手段抄袭X妙旅行的设计，作为一个技术核心驱动的产品，没有人才的过程那个痛苦呀！</p>
+<p>在尝试了各种逆向工程分析都用了之后，对X妙旅行的核心技术还是毫无眉目。无计可施的时候却在CNKI发现了一篇叫《旅游行程规划系统关键技术研究》的硕士学位论文。</p>
+<p>后来我们做了几件事，找到作者本人李建伟：</p>
+<ul>
+<li>在人人网上搜索这个人的名字，知道这个人从西安电子科技大学硕士毕业，现在在苏州某软工作，个人资料里留了QQ邮箱；</li>
+<li>Google搜索他的QQ号码，找到他在blogbus上的技术博客；</li>
+<li>从blogbus上找到他的知乎、微博主页；</li>
+<li>某同事后来惊诧了一下，他同学也在苏州某软，于是通过微信取得联系；</li>
+<li>然后这位同学说，李建伟坐在他旁边。</li>
+</ul>
+<p>当时我们就跟这篇论文的作者联系上了，作为一个创业公司，搜索帮我们寻找到人才，解决了燃眉之急。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[境外游市场竞争变化的感悟]]></title>
+      <url>http://tenstone.me/2015/12/01/%E5%A2%83%E5%A4%96%E6%B8%B8%E5%B8%82%E5%9C%BA%E7%AB%9E%E4%BA%89%E5%8F%98%E5%8C%96%E7%9A%84%E6%84%9F%E6%82%9F/</url>
+      <content type="html"><![CDATA[<p>上班的第一个月，我并不关注业绩，但在他们的谈话中，我似乎感觉到最近这三个月的数据并不理想。听其原因，是同质化竞争日趋严重，似乎每个行业都是这样，先驱者赚得第一桶金，当更多企业加入行业竞争的时候，价格战就开始了。</p>
+<p>突然想起来知乎上关于小米Note3发布会的一个讨论，<a href="http://www.zhihu.com/question/37836708" target="_blank" rel="external">如何评价雷军在小米Note3发布会上落泪</a>。价格战是市场竞争的一剂毒药，当然从某种角度消费者是价格战的受益者。雷军说了句，友商是傻逼，从中足以体会他对手机行业现状的无奈。乐视在广告中已打出“生态补贴硬件，售价低于硬件成本”的广告词，甚至在官网打出了硬件BOM表。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[搜索聚合的时代]]></title>
+      <url>http://tenstone.me/2015/11/30/%E6%90%9C%E7%B4%A2%E8%81%9A%E5%90%88%E7%9A%84%E6%97%B6%E4%BB%A3/</url>
+      <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>早在几年以前，我就非常想写一本跟搜索引擎有关的书，因为搜索引擎很有趣，我用它学会了现在掌握的大多数技能。或许跟你想的不太一样，我说的不是百度，也不特指Google，而是搜索的技巧和习惯。</p>
+<p>Web是1992年出现的，1993年就有了Web搜索引擎，不过那时候还没有多少Web页面可供搜索。所以杨致远和大卫·费罗凭借一个人工编辑的网址站，就完成了整个互联网的导航，并因此创办了Yahoo!。正是因为搜索引擎的出现，才让互联网冲出了黑暗。</p>
+<p>现在搜索随手可做，</p>
+<p>“搜索”被所有具有互联网使用经验的人熟知，而且每天都在使用。<br>信息时代渐行渐远逐渐藏进我们的生活，利用各种方法挖掘信息的能力愈发重要。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[谈业务，还是谈私交]]></title>
+      <url>http://tenstone.me/2015/11/29/%E8%B0%88%E4%B8%9A%E5%8A%A1%EF%BC%8C%E8%BF%98%E6%98%AF%E8%B0%88%E7%A7%81%E4%BA%A4/</url>
+      <content type="html"><![CDATA[<p>我没谈过什么业务，但听到的一些事情，让我觉得谈业务似乎是很简单的事情。无外乎 <strong>威逼</strong> 、 <strong>利诱</strong>  、 <strong>谈感情</strong> 。跟以前初中时看“成功学教父”陈安之的视频讲的差不多嘛，逃避痛苦和追求快乐是人性的诉求，而“威逼”代表痛苦，“利诱”和“谈感情”代表快乐。当我们都熟知了这些方法论，谈判要素就变成了双方手中的筹码。</p>
+<p>人性中还有一个要素是“贪婪”，归于追求快乐也很勉强吧？这是我们COO从泰国回来后分享的故事。DTAC副总裁，据说是一位泰国美女，打算向中国售卖化妆品，而我们希望拿到DTAC对外谈判的授权或者独家代理或者更低的进货价等等。这足以让这位泰国美女与我们的COO结成同盟，各取所需，这大概就是社会的现实吧？那个对你有所求的人，就是谈判对手的软肋。当然换一个说法也是妥当的，大家互相帮助，哈哈互相帮助。如果你不能给对方带来好处，TA为什么要帮助你？</p>
+<p>当然这也只是谈判桌上一个客观的现象而已，世上还是有很多带来温暖的人。想要成事，首要的还是先学会做人，学会给别人温暖，学会聊的投机，建立私人感情。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[坎坷融资路]]></title>
+      <url>http://tenstone.me/2015/11/29/%E5%9D%8E%E5%9D%B7%E8%9E%8D%E8%B5%84%E8%B7%AF/</url>
+      <content type="html"><![CDATA[<h2 id="缘起">缘起</h2><p>2015年10月26日，我加入了某境外游项目。鉴于对融资过程见闻体会。这是一个已经盈利的项目，一半以上的股东在35岁以上。跟想象的一样，我占了点小股但工资不高，当然我看重的是两年内公司能达到一个不错的规模，或许在南京买一个大一点的房子就变成一件很有可能的事情。就在我加入不久，公司与某天宫签订TS（投资意向书），但他们不会全投，需要我们继续寻找跟投。</p>
+<h2 id="领头">领头</h2><p>在我加入前，就已经初步达成了投资意向，后来他们说我卡的时间点太对了。不久后就签订TS，与某天宫确立领头关系。小VC受个人决定的影响较大，或许并不是足够的客观，公关效果较大。</p>
+<h2 id="约见IDG">约见IDG</h2><p>为了寻找跟投，我们联系了南京融资界的“皮条客”，皮条客给我们介绍了很多家，IDG是其中之一。在常亮眼中，这位皮条客挺“地头蛇”的。IDG是国际顶级投资公司，之前只是在新闻里听说过，没想到我们这么小规模的公司也能碰上这么大的投行公司。作为CTO，融资的事情前期与我并无多大关系，但是我还是要跟着一起看看是怎么回事，哈哈哈。听说，IDG内部认为，融资额少于5000w的都属于早期项目。</p>
+<hr>
+<p>2015年12月7日 更新<br><img src="/images/IDG给的回复.jpg" alt=""><br>从回复上看，IDG的尽调能力可见一斑，每一点都切中要害。一个投资机构的投资水平，体现在分析师的角色身上，对于大型融资机构而言，外围尽调到企业财务、行业能力似乎是基础能力。所以在跟大机构谈融资时，还是实诚点比较好。几点体会：</p>
+<ol>
+<li>做企业需要做好内功，内功不足，还是会被看出来的</li>
+<li>不急着吹牛，先做点什么证明自己所说的</li>
+</ol>
+<h2 id="某牛">某牛</h2><p>听说去年就有过投资意向，但价格太低我们不干，而今年某牛却一直在风头浪尖上。</p>
+<blockquote>
+<p> 现在已经是2016年了，本轮融资又被搁置，战线拉长。上面说的这些没有一个成功的。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[商业运营的本质是人群运营]]></title>
+      <url>http://tenstone.me/2015/11/29/%E5%95%86%E4%B8%9A%E8%BF%90%E8%90%A5%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BA%BA%E7%BE%A4%E8%BF%90%E8%90%A5/</url>
+      <content type="html"><![CDATA[<h2 id="缘起">缘起</h2><p>经历过O2O的第一波浪潮，从踌躇满志到战略转型，似乎资本催生的一波互联网创业热潮即将过去，也有称这一段时间为“资本寒冬”，忽冷忽热是资本市场的运行规律，只有那些抓住机会并且掌握住第一批用户的创业者有机会活下来。后来我离开来一掌了，项目失利，而我却通过这个项目完成了从就业到创业者的身份转变。</p>
+<p>从最初的技术出身，后来机缘巧合让我做了产品经理，再后来经历创业，一步一步发现商业运营的本质是人群运营。而技术和产品只能作为重要的运营的手段，而运营却是围绕着人群进行。没有人群，运营的是什么东西呢？没有运营，如何完成服务和商品的销售？没有服务或商品的销售，自然而然也就没有现金流，没了现金流就不能称之为商业。所以商业的本质还是服务人群，有人的地方便会有各种各样的需求，通过运营手段使服务、商品、消费形成闭环，并且在不断的积累中，获得更多的用户资源。</p>
+<h2 id="机会与风险并存">机会与风险并存</h2><p>中国有15亿人口，没有任何一个公司能将自己的产品覆盖到中国的所有公民。人的需求，却又无外乎衣、食、住、行，健康、学习、工作、旅行……这些需求总归是有限的，但是随着社会的发展，人类的需求又是不断升级的：十年前，早饭豆浆油条豆腐花已经足够了，但今天我们希望吃的更有营养、更健康，所以针对不同的人群出现了“豆浆机”、“蒸蛋器”、“肯德基”等等，所以任何时代都会有自己的独特性，创业者能够通过这些特性去Get√属于自己的人群。也因此，人群是没有黏性的，今天你的产品满足不了他的需求，明天他就会挑选别的更符合自身需求的产品。</p>
+<h2 id="一些想法">一些想法</h2><p>创业的过程也是创造的过程，一些不为人知的产品，通过营销、传达、编故事的方式让更多的人知道甚至流行，从而产品大量的消费和购买。而根本，在于我们如何去发现资源、并且把故事讲的迷人，让人们深信不疑。市场是愚钝的，一切事在人为。</p>
+<p>以人为本，这是这个时代任何（商业、政治）团体发展壮大的前提。</p>
+<h2 id="声明">声明</h2><p>个人臆想，若不慎让您作出错误的决定，不负责任。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[常用网站大参考]]></title>
+      <url>http://tenstone.me/2015/09/02/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99%E5%A4%A7%E5%8F%82%E8%80%83/</url>
+      <content type="html"><![CDATA[<h1 id="IT技术">IT技术</h1><p><a href="https://packagist.org/" target="_blank" rel="external">The PHP Package Repository</a><br><a href="http://laravel-china.github.io/php-the-right-way/" target="_blank" rel="external">PHP The Right Way</a></p>
+<h1 id="工具">工具</h1><p><a href="http://www.jiankongbao.com/" target="_blank" rel="external">监控宝</a></p>
+<h1 id="设计">设计</h1><p><a href="http://ued.taobao.org/blog/" target="_blank" rel="external">淘宝UED</a><br><a href="http://cdc.tencent.com/" target="_blank" rel="external">腾讯CDC</a><br><a href="http://isux.tencent.com/" target="_blank" rel="external">腾讯ISUX</a><br><a href="http://tgideas.qq.com/" target="_blank" rel="external">腾讯tgideas</a><br><a href="http://mxd.tencent.com/" target="_blank" rel="external">腾讯MXD</a><br><a href="http://jdc.jd.com/" target="_blank" rel="external">京东JDC</a><br><a href="http://mux.alimama.com/" target="_blank" rel="external">阿里MUX</a></p>
+<p><a href="http://since1984.cn/" target="_blank" rel="external">1984 设计 生活 发现新鲜</a></p>
+<h1 id="其他">其他</h1><p><a href="http://www.mifengtd.cn/" target="_blank" rel="external">褪墨｜时间管理</a><br><a href="https://www.v2ex.com/" target="_blank" rel="external">V2EX</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git快捷操作笔记]]></title>
+      <url>http://tenstone.me/2015/09/02/Git%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h1 id="版本管理">版本管理</h1><p>版本回退到某一一次commits</p>
+<pre><code>$ sudo -u apache git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard 8d5e87c</span></span>
+</code></pre><p>测试SSH</p>
+<pre><code><span class="variable">$ </span>sudo -u apache ssh -vT git<span class="variable">@bitbucket</span>.org
+</code></pre><h2 id="分支管理">分支管理</h2><pre><code>$ git branch              <span class="comment">//查看分支</span>
+$ git branch  &lt;<span class="built_in">name</span>&gt;      <span class="comment">//创建分支</span>
+$ git checkout  &lt;<span class="built_in">name</span>&gt;    <span class="comment">//切换分支</span>
+$ git merge  &lt;<span class="built_in">name</span>&gt;       <span class="comment">//合并分支到当前分支</span>
+$ git branch -d &lt;<span class="built_in">name</span>&gt;    <span class="comment">//删除分支   </span>
+</code></pre><p><a href="http://www.ruanyifeng.com/blog/2012/07/git.html" target="_blank" rel="external">分支管理策略</a>         </p>
+<h1 id="Hook_自动部署">Hook 自动部署</h1><p><a href="http://overtrue.me/articles/2015/01/how-to-deploy-project-with-git-hook.html" target="_blank" rel="external">参考文档</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo快捷操作笔记]]></title>
+      <url>http://tenstone.me/2015/09/02/Hexo%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo中文文档</a></p>
+<h1 id="服务器和部署">服务器和部署</h1><h2 id="本地">本地</h2><p>启动服务器，指定IP地址。同时watch监视文档更新</p>
+<pre><code>$ hexo server -i <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">8000</span>
+</code></pre><h2 id="部署">部署</h2><p>部署至Github</p>
+<pre><code>$ hexo <span class="keyword">d</span> -<span class="keyword">g</span>
+</code></pre><p>等同于</p>
+<pre><code><span class="variable">$ </span>hexo generate
+<span class="variable">$ </span>hexo deploy
+</code></pre><h2 id="写作">写作</h2><pre><code>$ hexo new <span class="string">[layout]</span> &lt;title&gt;
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown-语法说明]]></title>
+      <url>http://tenstone.me/2015/09/02/Markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/</url>
+      <content type="html"><![CDATA[<h3 id="1-_MARKDOWN是什么？">1. MARKDOWN是<em>什么</em>？</h3><p><strong>MARKDOWN</strong>是一种轻量级<strong>标记语言</strong>，它以纯文本形式(<em>易读、易写、易更改</em>)编写文档，并最终以HTML格式发布。<br><strong>MARKDOWN</strong>也可以理解为将以MARKDOWN语言编写的语言转换成HTML内容的工具，最初是一个perl脚本<em>Markdown.pl</em>。    </p>
+<h3 id="3-_为什么要使用它？">3. <em>为什么</em>要使用它？</h3><ul>
+<li>它是易读（<em>看起开舒服</em>）、易写（<em>语法简单</em>）、易更改<strong>纯文本</strong>。处处体现着<strong>极简主义</strong>的影子。</li>
+<li>兼容HTML，可以转换为HTML格式发布。</li>
+<li>跨平台使用。</li>
+<li>越来越多的网站支持Markdown。</li>
+<li>更方便清晰的组织你的电子邮件。（Markdown-here, Airmail）</li>
+<li>摆脱Word（我不是认真的）。</li>
+</ul>
+<h3 id="4-_怎么使用？">4. <em>怎么</em>使用？</h3><p>如果不算<strong>扩展</strong>，Markdown的语法绝对<strong>简单</strong>到让你爱不释手。</p>
+<p>废话太多，下面正文，Markdown语法主要分为如下几大部分：<br><strong>标题</strong>，<strong>段落</strong>，<strong>区块引用</strong>，<strong>代码区块</strong>，<strong>强调</strong>，<strong>列表</strong>，<strong>分割线</strong>，<strong>链接</strong>，<strong>图片</strong>，<strong>反斜杠 <code>\</code></strong>，<strong>符号’`’</strong>。</p>
+<h4 id="4-1_标题">4.1 标题</h4><p>两种形式：<br>1）使用<code>=</code>和<code>-</code>标记一级和二级标题。</p>
+<blockquote>
+<p>一级标题<br><code>=========</code><br>二级标题<br><code>---------</code></p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<h1 id="一级标题">一级标题   </h1><h2 id="二级标题">二级标题</h2></blockquote>
+<p>2）使用<code>#</code>，可表示1-6级标题。</p>
+<blockquote>
+<p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<h1 id="一级标题-1">一级标题</h1><h2 id="二级标题-1">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6></blockquote>
+<h4 id="4-2_段落">4.2 段落</h4><p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用<strong>两个以上</strong>空格加上回车（引用中换行省略回车）。</p>
+<h4 id="4-3_区块引用">4.3 区块引用</h4><p>在段落的每行或者只在第一行使用符号<code>&gt;</code>,还可使用多个嵌套引用，如：</p>
+<blockquote>
+<p>> 区块引用<br>>&gt; 嵌套引用  </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p>区块引用  </p>
+<blockquote>
+<p>嵌套引用 </p>
+</blockquote>
+</blockquote>
+<h4 id="4-4_代码区块">4.4 代码区块</h4><p>代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如<br>普通段落：</p>
+<p>void main()<br>{<br>    printf(“Hello, Markdown.”);<br>}    </p>
+<p>代码区块：</p>
+<pre><code><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>
+</span>{
+    <span class="built_in">printf</span>(<span class="string">"Hello, Markdown."</span>);
+}
+</code></pre><p><strong>注意</strong>:需要和普通段落之间存在空行。</p>
+<h4 id="4-5_强调">4.5 强调</h4><p>在强调内容两侧分别加上<code>*</code>或者<code>_</code>，如：</p>
+<blockquote>
+<p>*斜体*，_斜体_<br>**粗体**，__粗体__</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><em>斜体</em>，<em>斜体</em><br><strong>粗体</strong>，<strong>粗体</strong></p>
+</blockquote>
+<h4 id="4-6_列表">4.6 列表</h4><p>使用<code>·</code>、<code>+</code>、或<code>-</code>标记无序列表，如：</p>
+<blockquote>
+<p>-（+*） 第一项<br>-（+*） 第二项<br>- （+*）第三项</p>
+</blockquote>
+<p><strong>注意</strong>：标记后面最少有一个<em>空格</em>或<em>制表符</em>。若不在引用区块中，必须和前方段落之间存在空行。</p>
+<p>效果：</p>
+<blockquote>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<p>有序列表的标记方式是将上述的符号换成数字,并辅以<code>.</code>，如：</p>
+<blockquote>
+<p>1 . 第一项<br>2 . 第二项<br>3 . 第三项    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+</blockquote>
+<h4 id="4-7_分割线">4.7 分割线</h4><p>分割线最常使用就是三个或以上<code>*</code>，还可以使用<code>-</code>和<code>_</code>。</p>
+<h4 id="4-8_链接">4.8 链接</h4><p>链接可以由两种形式生成：<strong>行内式</strong>和<strong>参考式</strong>。<br><strong>行内式</strong>：</p>
+<blockquote>
+<p>[younghz的Markdown库](https:://github.com/younghz/Markdown “Markdown”)。</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><a href="https:://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">younghz的Markdown库</a>。</p>
+</blockquote>
+<p><strong>参考式</strong>：</p>
+<blockquote>
+<p>[younghz的Markdown库1][1]<br>[younghz的Markdown库2][2]<br>[1]:https:://github.com/younghz/Markdown “Markdown”<br>[2]:https:://github.com/younghz/Markdown “Markdown”    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><a href="https:://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">younghz的Markdown库1</a><br><a href="https:://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">younghz的Markdown库2</a></p>
+</blockquote>
+<p><strong>注意</strong>：上述的<code>[1]:https:://github.com/younghz/Markdown &quot;Markdown&quot;</code>不出现在区块中。</p>
+<h4 id="4-9_图片">4.9 图片</h4><p>添加图片的形式和链接相似，只需在链接的基础上前方加一个<code>！</code>。</p>
+<h4 id="4-10_反斜杠\">4.10 反斜杠<code>\</code></h4><p>相当于<strong>反转义</strong>作用。使符号成为普通符号。</p>
+<h4 id="4-11_符号’`’">4.11 符号’`’</h4><p>起到标记作用。如：</p>
+<blockquote>
+<p>`ctrl+a`</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><code>ctrl+a</code>    </p>
+</blockquote>
+<h4 id="5-_都谁在用？">5. 都<em>谁</em>在用？</h4><p>Markdown的使用者：</p>
+<ul>
+<li>GitHub</li>
+<li>简书</li>
+<li>Stack Overflow</li>
+<li>Apollo</li>
+<li>Moodle</li>
+<li>Reddit</li>
+<li>等等</li>
+</ul>
+<h4 id="6-_感觉有意思？趁热打铁，推荐几个工具。">6. 感觉有意思？趁热打铁，推荐几个<em>工具</em>。</h4><ul>
+<li><strong>Chrome</strong>下的stackedit插件可以离线使用，很爽。也不用担心平台受限。<br>在线的dillinger.io算是评价好的了，可是不能离线使用。    </li>
+<li><strong>Windowns</strong>下的MarkdownPad也用过，不过免费版的体验不是很好。    </li>
+<li><strong>Mac</strong>下的Mou是国人贡献的，口碑很好。推荐。    </li>
+<li><strong>Linux</strong>下的ReText不错。    </li>
+</ul>
+<p><strong>其实在对语法了如于心的话，直接用编辑器就可以了，脑子里满满的都是格式化好的文本啊。</strong><br>我现在使用<code>马克飞象</code> + <code>Markdown-here</code>，先编辑好，然后一键格式化，挺方便。</p>
+<hr>
+<p><strong>注意</strong>：不同的Markdown解释器或工具对相应语法（扩展语法）的解释效果不尽相同，具体可参见工具的使用说明。<br>虽然有人想出面搞一个所谓的标准化的Markdown，[没想到还惹怒了健在的创始人John Gruber]<br>(<a href="http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/)。" target="_blank" rel="external">http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/)。</a></p>
+<hr>
+<p>以上基本是所有traditonal markdown的语法。</p>
+<p><a href="https://github.com/younghz/Markdown" target="_blank" rel="external">转载自younghz的Github</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[你好，Tenstone]]></title>
+      <url>http://tenstone.me/2015/09/01/%E4%BD%A0%E5%A5%BD%EF%BC%8CTenstone/</url>
+      <content type="html"><![CDATA[<p>  第一次使用Markdown，第一次使用Hexo，第一次使用IDE写博客。技术领域总是有很多让人感到新鲜的事物，让人欣喜若狂。虽然很多人很久之前就在用了，现在觉得自己也终于赶上一次时髦。</p>
+<p>从3年前自学PHP开始，没有一点进步不是依靠着在百度、谷歌上搜索学习到的知识完成的，不管我遇到了任何问题，都能找到解答。从那时开始，那些写教程的人在我眼里都是大神。而现在虽然还不时需要查文档，总算在有一些学习成果，希望以此博客记录自己的学习和研究成果，跟大家一起分享吧！而且，我还希望完成一些开源项目，为程序猿界做出一些贡献，这也是我一直以来的一个小小愿望。那么我的第一个项目是，完成一个LBS SDK，基于百度和高德的API，当然要基于Modern PHP。</p>
+<p>这是一本我最近在阅读的书，PHP与最初学习时已经有很大的不同。她像NodeJS一样，有自己的依赖管理，也有自己的语言生态系统。</p>
+<p><a href="/attach/OReilly.Modern.PHP.2015.2.mobi">《Modern PHP》Kindle版</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>

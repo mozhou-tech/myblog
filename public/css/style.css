@@ -2289,3 +2289,13 @@ pre .css ~ * .id {
   height: 100%;
   overflow: hidden;
 }
+ul.search-result-list {
+  padding-left: 10px;
+}
+a.search-result-title {
+  font-weight: bold;
+}
+em.search-keyword {
+  border-bottom: 1px dashed #4088b8;
+  font-weight: bold;
+}

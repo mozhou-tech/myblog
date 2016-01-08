@@ -73,3 +73,7 @@ deploy:
 #  repo: https://github.com/tenstone/tenstone.github.io.git
   branch: master
   message: page update.
+
+search:
+  path: search.xml
+  field: post

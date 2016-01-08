@@ -32,6 +32,7 @@
     <div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
+
 		<a href="/" class="profilepic">
 			
 			<img lazy-src="http://tenstone.me/images/avatar.jpg" class="js-avatar">
@@ -332,8 +333,17 @@
 </script>
 <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/js/main.js" type="text/javascript"></script>
-
-
+<!-- for search plugin start -->
+<script src="js/search.js"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length == 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+<!--for search plugin end-->
 
 <!-- Google Analytics -->
 <script type="text/javascript">
