@@ -74,6 +74,26 @@ deploy:
   branch: master
   message: page update.
 
+#  repo: https://github.com/PaicHyperionDev/hexo-generator-search
+
 search:
   path: search.xml
   field: post
+
+# repo: https://github.com/unhealthy/hexo-all-minifier
+html_minifier:
+  enable: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude:
+    - all.min.css
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - all.min.js
