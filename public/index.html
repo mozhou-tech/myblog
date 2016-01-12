@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 13.33px;">写作</a> <a href="/tags/创业/" style="font-size: 16.67px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/快速笔记/" style="font-size: 10px;">快速笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 13.33px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/写作/" style="font-size: 12.5px;">写作</a> <a href="/tags/创业/" style="font-size: 17.5px;">创业</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/快速笔记/" style="font-size: 15px;">快速笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 12.5px;">搜索熊“寻人启事”</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -199,6 +199,193 @@
     </article>
 </div>
 <!-- Search plugin  end -->
+
+  
+    <article id="post-PHP安装ImageMagick" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/12/PHP安装ImageMagick/" class="article-date">
+  	<time datetime="2016-01-12T04:58:54.000Z" itemprop="datePublished">2016-01-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/12/PHP安装ImageMagick/">PHP安装ImageMagick</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>pecl安装PHP组件报错，</p>
+<pre><code>Warning: Invalid argument supplied <span class="keyword">for</span> <span class="function"><span class="title">foreach</span><span class="params">()</span></span> <span class="keyword">in</span> Command<span class="class">.php</span> on line <span class="number">259</span>
+Warning: Invalid argument supplied <span class="keyword">for</span> <span class="function"><span class="title">foreach</span><span class="params">()</span></span> <span class="keyword">in</span> Command<span class="class">.php</span> on line <span class="number">259</span>
+</code></pre><p>后来发现是php-pear安装版本错误，执行下列命令，删除原有旧版本的安装包，之后，结果如预期。</p>
+<pre><code>yum erase php-pear
+yum <span class="keyword">install</span> php56w-pear
+pecl <span class="keyword">install</span> imagick
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快速笔记/">快速笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-CSS常用速查" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/10/CSS常用速查/" class="article-date">
+  	<time datetime="2016-01-10T06:18:30.000Z" itemprop="datePublished">2016-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/10/CSS常用速查/">CSS常用速查</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>Table强制不换行</p>
+<pre><code><span class="class">.table</span> <span class="tag">td</span>,<span class="class">.table</span> <span class="tag">th</span><span class="rules">{<span class="rule"><span class="attribute">word-break</span>:<span class="value"> keep-all</span></span>;<span class="rule"><span class="attribute">white-space</span>:<span class="value">nowrap</span></span>;}</span>
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快速笔记/">快速笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-火车头采集器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/08/火车头采集器/" class="article-date">
+  	<time datetime="2016-01-08T09:57:30.000Z" itemprop="datePublished">2016-01-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/08/火车头采集器/">火车头采集器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>好东西不多说：<br>链接：<a href="http://pan.baidu.com/s/1bnMO5u3" target="_blank" rel="external">http://pan.baidu.com/s/1bnMO5u3</a> 密码：e96j</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快捷笔记/">快捷笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
 
   
     <article id="post-APICloud和ionicFramework的比较" class="article article-type-post" itemscope itemprop="blogPost">
@@ -801,267 +988,9 @@ clear
 
 
   
-    <article id="post-Git自动化部署的研究" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/04/Git自动化部署的研究/" class="article-date">
-  	<time datetime="2015-12-04T08:18:22.000Z" itemprop="datePublished">2015-12-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/04/Git自动化部署的研究/">Git自动化部署的研究</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在来一掌时使用的手动Git部署脚本</p>
-<pre><code><span class="shebang">#!/bin/sh</span>
-<span class="built_in">echo</span> <span class="string">'Starting Deployment...'</span>
-<span class="built_in">cd</span> /alidata/wwwroot/laiyizhang_v2
-sudo -u apache git reset --hard
-sudo -u apache git pull git@bitbucket.org:laiyizhang/laiyizhang_v2.git master
-
-gulp mobile-lib-js
-gulp mobile-app-js
-gulp mobile-app-css
-
-php composer.phar dump-autoload
-php artisan cache:clear
-php artisan route:cache
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Nginx-常用配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/04/Nginx-常用配置/" class="article-date">
-  	<time datetime="2015-12-04T05:59:06.000Z" itemprop="datePublished">2015-12-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/04/Nginx-常用配置/">Nginx 常用配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>收集一些常用的Nginx配置方法，具体说明见注释。</p>
-<ol>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">HTTP访问控制(CORS)</a></li>
-<li><a href="http://enable-cors.org/server_nginx.html" target="_blank" rel="external">CORS on Nginx 官方配置</a></li>
-</ol>
-<pre><code><span class="title">location</span> / {
-    <span class="title">index</span>  index.php index.html index.htm;
-    <span class="comment"># 隐藏index.php</span>
-    <span class="title">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php<span class="variable">$is_args</span><span class="variable">$query_string</span>;
-    <span class="comment"># CORS 预请求</span>
-    <span class="title">if</span> (<span class="variable">$request_method</span> = <span class="string">'OPTIONS'</span>) {
-        <span class="title">add_header</span> Access-Control-Allow-Origin *;
-        <span class="title">add_header</span> Access-Control-Allow-Credentials <span class="built_in">true</span>;
-        <span class="title">add_header</span> Access-Control-Allow-Methods <span class="string">'GET, POST, OPTIONS'</span>;
-        <span class="title">add_header</span> <span class="string">'Access-Control-Allow-Headers'</span> <span class="string">'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type'</span>;
-        <span class="title">return</span> <span class="number">200</span>;
-    }
-}
-<span class="comment"># 配置字体可以跨站调用</span>
-<span class="title">location</span> <span class="regexp">~* \.(eot|ttf|woff|svg)$</span> {
-    <span class="title">add_header</span> Access-Control-Allow-Origin *;
-}
-
- <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
- <span class="comment">#</span>
- <span class="title">location</span> <span class="regexp">~ \.php$</span> {
-    <span class="title">fastcgi_pass</span>   <span class="number">127.0.0.1:9000</span>;
-    <span class="title">fastcgi_index</span>  index.php;
-    <span class="title">fastcgi_param</span>  SCRIPT_FILENAME  <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;
-    <span class="title">include</span>        fastcgi_params;
- }
-</code></pre><ol>
-<li>配置Nginx缓存，加速访问<a href="http://nginx.org/en/docs/http/ngx_http_headers_module.html" target="_blank" rel="external">官方参考</a></li>
-</ol>
-<pre><code><span class="comment"># cache.appcache, your document html and data</span>
-location ~* \.(?<span class="symbol">:manifest|appcache|html?|xml|json</span>)<span class="variable">$ </span>{
-  expires -<span class="number">1</span>;
-  access_log logs/static.log;
-}
-
-<span class="comment"># Feed</span>
-location ~* \.(?<span class="symbol">:rss|atom</span>)<span class="variable">$ </span>{
-  expires <span class="number">1</span>h;
-  add_header <span class="constant">Cache-Control </span><span class="string">"public"</span>;
-}
-
-<span class="comment"># Media: images, icons, video, audio, HTC</span>
-location ~* \.(?<span class="symbol">:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc</span>)<span class="variable">$ </span>{
-  expires <span class="number">1</span>M;
-  access_log off;
-  add_header <span class="constant">Cache-Control </span><span class="string">"public"</span>;
-}
-
-<span class="comment"># CSS and Javascript</span>
-location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </span>{
-  expires <span class="number">1</span>y;
-  access_log off;
-  add_header <span class="constant">Cache-Control </span><span class="string">"public"</span>;
-}
-
-<span class="comment"># WebFonts</span>
-<span class="comment"># If you are NOT using cross-domain-fonts.conf, uncomment the following directive</span>
-<span class="comment"># location ~* \.(?:ttf|ttc|otf|eot|woff|woff2)$ {</span>
-<span class="comment">#  expires 1M;</span>
-<span class="comment">#  access_log off;</span>
-<span class="comment">#  add_header Cache-Control "public";</span>
-<span class="comment"># }</span>
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-寻人启事" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/02/寻人启事/" class="article-date">
-  	<time datetime="2015-12-02T08:56:10.000Z" itemprop="datePublished">2015-12-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/02/寻人启事/">寻人启事</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>那时我还在Q旅行做CTO，公司正在策划一款“智能旅行”的App，其中一个很重要的功能是“智能行程规划”，当时智能行程规划的技术尚不成熟，成熟的产品更是寥寥无几，早期阶段通过各种手段抄袭X妙旅行的设计，作为一个技术核心驱动的产品，没有人才的过程那个痛苦呀！</p>
-<p>在尝试了各种逆向工程分析都用了之后，对X妙旅行的核心技术还是毫无眉目。无计可施的时候却在CNKI发现了一篇叫《旅游行程规划系统关键技术研究》的硕士学位论文。</p>
-<p>后来我们做了几件事，找到作者本人李建伟：</p>
-<ul>
-<li>在人人网上搜索这个人的名字，知道这个人从西安电子科技大学硕士毕业，现在在苏州某软工作，个人资料里留了QQ邮箱；</li>
-<li>Google搜索他的QQ号码，找到他在blogbus上的技术博客；</li>
-<li>从blogbus上找到他的知乎、微博主页；</li>
-<li>某同事后来惊诧了一下，他同学也在苏州某软，于是通过微信取得联系；</li>
-<li>然后这位同学说，李建伟坐在他旁边。</li>
-</ul>
-<p>当时我们就跟这篇论文的作者联系上了，作为一个创业公司，搜索帮我们寻找到人才，解决了燃眉之急。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索熊“寻人启事”/">搜索熊“寻人启事”</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

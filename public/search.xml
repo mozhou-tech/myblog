@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title><![CDATA[PHP安装ImageMagick]]></title>
+      <url>http://tenstone.me/2016/01/12/PHP%E5%AE%89%E8%A3%85ImageMagick/</url>
+      <content type="html"><![CDATA[<p>pecl安装PHP组件报错，</p>
+<pre><code>Warning: Invalid argument supplied <span class="keyword">for</span> <span class="function"><span class="title">foreach</span><span class="params">()</span></span> <span class="keyword">in</span> Command<span class="class">.php</span> on line <span class="number">259</span>
+Warning: Invalid argument supplied <span class="keyword">for</span> <span class="function"><span class="title">foreach</span><span class="params">()</span></span> <span class="keyword">in</span> Command<span class="class">.php</span> on line <span class="number">259</span>
+</code></pre><p>后来发现是php-pear安装版本错误，执行下列命令，删除原有旧版本的安装包，之后，结果如预期。</p>
+<pre><code>yum erase php-pear
+yum <span class="keyword">install</span> php56w-pear
+pecl <span class="keyword">install</span> imagick
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSS常用速查]]></title>
+      <url>http://tenstone.me/2016/01/10/CSS%E5%B8%B8%E7%94%A8%E9%80%9F%E6%9F%A5/</url>
+      <content type="html"><![CDATA[<ol>
+<li><p>Table强制不换行</p>
+<pre><code><span class="class">.table</span> <span class="tag">td</span>,<span class="class">.table</span> <span class="tag">th</span><span class="rules">{<span class="rule"><span class="attribute">word-break</span>:<span class="value"> keep-all</span></span>;<span class="rule"><span class="attribute">white-space</span>:<span class="value">nowrap</span></span>;}</span>
+</code></pre></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[火车头采集器]]></title>
+      <url>http://tenstone.me/2016/01/08/%E7%81%AB%E8%BD%A6%E5%A4%B4%E9%87%87%E9%9B%86%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>好东西不多说：<br>链接：<a href="http://pan.baidu.com/s/1bnMO5u3" target="_blank" rel="external">http://pan.baidu.com/s/1bnMO5u3</a> 密码：e96j</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[APICloud和ionicFramework的比较]]></title>
       <url>http://tenstone.me/2016/01/07/APICloud%E5%92%8CionicFramework%E7%9A%84%E6%AF%94%E8%BE%83/</url>
       <content type="html"><![CDATA[<p>一直鄙视国产厂商，但这一次比较狠狠的打了自己一记巴掌。<br>APICloud的api对象封装了常用的APP交互，使其封装出来的APP和原生开发的APP一样流畅。虽然打包方式和原理和ionic一样都是用了<a href="http://cordova.apache.org" target="_blank" rel="external">Cordova</a>，但是APICloud有下列的优点：</p>
