@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[使用Github项目协作]]></title>
-      <url>http://tenstone.me/2016/01/13/%E4%BD%BF%E7%94%A8Github%E9%A1%B9%E7%9B%AE%E5%8D%8F%E4%BD%9C/</url>
+      <url>http://tenstone.me/2016/01/13/tech/%E4%BD%BF%E7%94%A8Github%E9%A1%B9%E7%9B%AE%E5%8D%8F%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h2 id="Fork">Fork</h2><p>从别人的项目中fork一个到你自己的仓库<br>这个时候这个仓库就是你的了，要删除这个仓库到设置-admin 那里，像你删除你自己创建的repo一样删除，（因为这个库就是你的了，你现在可以任意修改这个库，除非你pull request被接受否则你 不会对原作者的库产生任何影响）</p>
 <p>比如osteach账号下有个osteach.github.com的库<br>这个项目的地址是https/github.com/osteach/osteach.github.com</p>
 <p>这时候我（suziewong）想贡献代码了。fork之<br>fork之后，你的个人仓库就多了这个库<br><a href="https://github.com/suziewong/osteach.github.com" target="_blank" rel="external">https://github.com/suziewong/osteach.github.com</a></p>
@@ -49,7 +49,7 @@ git push osteach master 之类的都是没用的
     
     <entry>
       <title><![CDATA[安装ImageMagick和php-imagick]]></title>
-      <url>http://tenstone.me/2016/01/12/PHP%E5%AE%89%E8%A3%85ImageMagick/</url>
+      <url>http://tenstone.me/2016/01/12/tech/PHP%E5%AE%89%E8%A3%85ImageMagick/</url>
       <content type="html"><![CDATA[<p>pecl安装PHP组件报错，</p>
 <pre><code>Warning: Invalid argument supplied <span class="keyword">for</span> <span class="function"><span class="title">foreach</span><span class="params">()</span></span> <span class="keyword">in</span> Command<span class="class">.php</span> on line <span class="number">259</span>
 Warning: Invalid argument supplied <span class="keyword">for</span> <span class="function"><span class="title">foreach</span><span class="params">()</span></span> <span class="keyword">in</span> Command<span class="class">.php</span> on line <span class="number">259</span>
@@ -68,7 +68,7 @@ pecl <span class="keyword">install</span> imagick
     
     <entry>
       <title><![CDATA[CSS常用速查]]></title>
-      <url>http://tenstone.me/2016/01/10/CSS%E5%B8%B8%E7%94%A8%E9%80%9F%E6%9F%A5/</url>
+      <url>http://tenstone.me/2016/01/10/tech/CSS%E5%B8%B8%E7%94%A8%E9%80%9F%E6%9F%A5/</url>
       <content type="html"><![CDATA[<ol>
 <li><p>Table强制不换行</p>
 <pre><code><span class="class">.table</span> <span class="tag">td</span>,<span class="class">.table</span> <span class="tag">th</span><span class="rules">{<span class="rule"><span class="attribute">word-break</span>:<span class="value"> keep-all</span></span>;<span class="rule"><span class="attribute">white-space</span>:<span class="value">nowrap</span></span>;}</span>
@@ -79,14 +79,14 @@ pecl <span class="keyword">install</span> imagick
     
     <entry>
       <title><![CDATA[火车头采集器]]></title>
-      <url>http://tenstone.me/2016/01/08/%E7%81%AB%E8%BD%A6%E5%A4%B4%E9%87%87%E9%9B%86%E5%99%A8/</url>
+      <url>http://tenstone.me/2016/01/08/tech/%E7%81%AB%E8%BD%A6%E5%A4%B4%E9%87%87%E9%9B%86%E5%99%A8/</url>
       <content type="html"><![CDATA[<p>好东西不多说：<br>链接：<a href="http://pan.baidu.com/s/1bnMO5u3" target="_blank" rel="external">http://pan.baidu.com/s/1bnMO5u3</a> 密码：e96j</p>
 ]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[APICloud和ionicFramework的比较]]></title>
-      <url>http://tenstone.me/2016/01/07/APICloud%E5%92%8CionicFramework%E7%9A%84%E6%AF%94%E8%BE%83/</url>
+      <url>http://tenstone.me/2016/01/07/tech/APICloud%E5%92%8CionicFramework%E7%9A%84%E6%AF%94%E8%BE%83/</url>
       <content type="html"><![CDATA[<p>一直鄙视国产厂商，但这一次比较狠狠的打了自己一记巴掌。<br>APICloud的api对象封装了常用的APP交互，使其封装出来的APP和原生开发的APP一样流畅。虽然打包方式和原理和ionic一样都是用了<a href="http://cordova.apache.org" target="_blank" rel="external">Cordova</a>，但是APICloud有下列的优点：</p>
 <blockquote>
 <ol>
@@ -101,7 +101,7 @@ pecl <span class="keyword">install</span> imagick
     
     <entry>
       <title><![CDATA[LiveReload实现浏览器自动刷新]]></title>
-      <url>http://tenstone.me/2016/01/06/LiveReload%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/</url>
+      <url>http://tenstone.me/2016/01/06/tech/LiveReload%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/</url>
       <content type="html"><![CDATA[<h2 id="再也不用按F5，节省了不少时间">再也不用按F5，节省了不少时间</h2><p>昨天突然阅读到一篇文章<a href="http://andremadarang.com/livereload-and-browsersync-with-laravel/" target="_blank" rel="external">LiveReload admin Browsersync with Laravel</a>，于是乎发现了两个不错的前端开发辅助项目<a href="https://www.browsersync.io/" target="_blank" rel="external">Browsersync</a>和<a href="http://livereload.com/" target="_blank" rel="external">LiveReload</a>。</p>
 <h2 id="LiveReload">LiveReload</h2><ol>
 <li><p>目前使用的是PhpStorm编辑器，使用的是Laravel，所以配置文件可能和gulp.js-livereload不同，以下是gulpfile.js配置详细：</p>
@@ -139,7 +139,7 @@ gulp.task(<span class="string">'watch'</span>, <span class="function"><span clas
     
     <entry>
       <title><![CDATA[Nodejs NPM的使用]]></title>
-      <url>http://tenstone.me/2016/01/05/Nodejs-NPM%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <url>http://tenstone.me/2016/01/05/tech/Nodejs-NPM%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<p>npm install b –save會幫你安裝並添加依赖</p>
 <pre><code>npm config <span class="built_in">set</span> strict-ssl <span class="constant">false</span>            <span class="comment"> //关闭npm的HTTPS</span>
 npm config <span class="built_in">set</span> registry <span class="string">"http://registry.npmjs.org/"</span>   <span class="comment"> //设置npm的获取地址</span>
@@ -153,7 +153,7 @@ npm config <span class="built_in">delete</span> <span class="keyword">https</spa
     
     <entry>
       <title><![CDATA[Composer和Laravel的一些小技巧]]></title>
-      <url>http://tenstone.me/2015/12/21/Composer%E5%92%8CLaravel%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+      <url>http://tenstone.me/2015/12/21/tech/Composer%E5%92%8CLaravel%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
       <content type="html"><![CDATA[<h2 id="Composer_两个小技巧">Composer 两个小技巧</h2><p>使用Composer以后，Laravel的开发效率提升了不止一点点</p>
 <ol>
 <li>composer update foo/bar  // 更新单个库</li>
@@ -167,7 +167,7 @@ npm config <span class="built_in">delete</span> <span class="keyword">https</spa
     
     <entry>
       <title><![CDATA[CentOS 7一键部署VPN]]></title>
-      <url>http://tenstone.me/2015/12/18/CentOS-7%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2VPN/</url>
+      <url>http://tenstone.me/2015/12/18/tech/CentOS-7%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2VPN/</url>
       <content type="html"><![CDATA[<p>参考：<a href="https://blog.linuxeye.com/412.html" target="_blank" rel="external">https://blog.linuxeye.com/412.html</a></p>
 <p>从Windows Copy到Linux时，解决/bin/bash^M: bad interpreter: No such file or directory问题</p>
 <pre><code>sed -<span class="tag">i</span> -e <span class="string">'s/\r$//'</span> vpn_setup.sh
@@ -287,7 +287,7 @@ clear
     
     <entry>
       <title><![CDATA[CentOS 7下安装MySQL使用参考]]></title>
-      <url>http://tenstone.me/2015/12/18/CentOS-7%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83/</url>
+      <url>http://tenstone.me/2015/12/18/tech/CentOS-7%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83/</url>
       <content type="html"><![CDATA[<p>部署环境：CentOS下安装MySQL5.6.28。一开始安装MySQL5.7.10也是遇到这个问题。</p>
 <h2 id="改变数据目录后无法启动">改变数据目录后无法启动</h2><p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
 <pre><code>ln <span class="operator">-s</span> /alidata/mysqldata mysql
@@ -326,7 +326,7 @@ clear
     
     <entry>
       <title><![CDATA[Git自动化部署的研究]]></title>
-      <url>http://tenstone.me/2015/12/04/Git%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E7%9A%84%E7%A0%94%E7%A9%B6/</url>
+      <url>http://tenstone.me/2015/12/04/tech/Git%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E7%9A%84%E7%A0%94%E7%A9%B6/</url>
       <content type="html"><![CDATA[<p>在来一掌时使用的手动Git部署脚本</p>
 <pre><code><span class="shebang">#!/bin/sh</span>
 <span class="built_in">echo</span> <span class="string">'Starting Deployment...'</span>
@@ -346,7 +346,7 @@ php artisan route:cache
     
     <entry>
       <title><![CDATA[Nginx 常用配置]]></title>
-      <url>http://tenstone.me/2015/12/04/Nginx-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
+      <url>http://tenstone.me/2015/12/04/tech/Nginx-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<p>收集一些常用的Nginx配置方法，具体说明见注释。</p>
 <ol>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">HTTP访问控制(CORS)</a></li>
@@ -419,7 +419,7 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
     
     <entry>
       <title><![CDATA[寻人启事]]></title>
-      <url>http://tenstone.me/2015/12/02/%E5%AF%BB%E4%BA%BA%E5%90%AF%E4%BA%8B/</url>
+      <url>http://tenstone.me/2015/12/02/book/%E5%AF%BB%E4%BA%BA%E5%90%AF%E4%BA%8B/</url>
       <content type="html"><![CDATA[<p>那时我还在Q旅行做CTO，公司正在策划一款“智能旅行”的App，其中一个很重要的功能是“智能行程规划”，当时智能行程规划的技术尚不成熟，成熟的产品更是寥寥无几，早期阶段通过各种手段抄袭X妙旅行的设计，作为一个技术核心驱动的产品，没有人才的过程那个痛苦呀！</p>
 <p>在尝试了各种逆向工程分析都用了之后，对X妙旅行的核心技术还是毫无眉目。无计可施的时候却在CNKI发现了一篇叫《旅游行程规划系统关键技术研究》的硕士学位论文。</p>
 <p>后来我们做了几件事，找到作者本人李建伟：</p>
@@ -444,11 +444,12 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
     
     <entry>
       <title><![CDATA[搜索聚合的时代]]></title>
-      <url>http://tenstone.me/2015/11/30/%E6%90%9C%E7%B4%A2%E8%81%9A%E5%90%88%E7%9A%84%E6%97%B6%E4%BB%A3/</url>
+      <url>http://tenstone.me/2015/11/30/book/%E6%90%9C%E7%B4%A2%E8%81%9A%E5%90%88%E7%9A%84%E6%97%B6%E4%BB%A3/</url>
       <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>早在几年以前，我就非常想写一本跟搜索引擎有关的书，因为搜索引擎很有趣，我用它学会了现在掌握的大多数技能。或许跟你想的不太一样，我说的不是百度，也不特指Google，而是搜索的技巧和习惯。</p>
 <p>Web是1992年出现的，1993年就有了Web搜索引擎，不过那时候还没有多少Web页面可供搜索。所以杨致远和大卫·费罗凭借一个人工编辑的网址站，就完成了整个互联网的导航，并因此创办了Yahoo!。正是因为搜索引擎的出现，才让互联网冲出了黑暗。</p>
 <p>现在搜索随手可做，</p>
 <p>“搜索”被所有具有互联网使用经验的人熟知，而且每天都在使用。<br>信息时代渐行渐远逐渐藏进我们的生活，利用各种方法挖掘信息的能力愈发重要。</p>
+<h2 id="目录及话题">目录及话题</h2><p>发现两者之间的联系<br>了解一个人、一个公司</p>
 ]]></content>
     </entry>
     
@@ -505,7 +506,7 @@ location ~* \.(?<span class="symbol">:css|js</span>)<span class="variable">$ </s
     
     <entry>
       <title><![CDATA[Git快捷操作笔记]]></title>
-      <url>http://tenstone.me/2015/09/02/Git%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+      <url>http://tenstone.me/2015/09/02/tech/Git%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<h1 id="版本管理">版本管理</h1><p>版本回退到某一一次commits</p>
 <pre><code>$ sudo -u apache git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard 8d5e87c</span></span>
 </code></pre><p>测试SSH</p>
@@ -522,7 +523,7 @@ $ git branch -d &lt;<span class="built_in">name</span>&gt;    <span class="comme
     
     <entry>
       <title><![CDATA[Hexo快捷操作笔记]]></title>
-      <url>http://tenstone.me/2015/09/02/Hexo%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
+      <url>http://tenstone.me/2015/09/02/tech/Hexo%E5%BF%AB%E6%8D%B7%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo中文文档</a></p>
 <h1 id="服务器和部署">服务器和部署</h1><h2 id="本地">本地</h2><p>启动服务器，指定IP地址。同时watch监视文档更新</p>
 <pre><code>$ hexo server -i <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">8000</span>
@@ -537,7 +538,7 @@ $ git branch -d &lt;<span class="built_in">name</span>&gt;    <span class="comme
     
     <entry>
       <title><![CDATA[Markdown-语法说明]]></title>
-      <url>http://tenstone.me/2015/09/02/Markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/</url>
+      <url>http://tenstone.me/2015/09/02/tech/Markdown-%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E/</url>
       <content type="html"><![CDATA[<h3 id="1-_MARKDOWN是什么？">1. MARKDOWN是<em>什么</em>？</h3><p><strong>MARKDOWN</strong>是一种轻量级<strong>标记语言</strong>，它以纯文本形式(<em>易读、易写、易更改</em>)编写文档，并最终以HTML格式发布。<br><strong>MARKDOWN</strong>也可以理解为将以MARKDOWN语言编写的语言转换成HTML内容的工具，最初是一个perl脚本<em>Markdown.pl</em>。    </p>
 <h3 id="3-_为什么要使用它？">3. <em>为什么</em>要使用它？</h3><ul>
 <li>它是易读（<em>看起开舒服</em>）、易写（<em>语法简单</em>）、易更改<strong>纯文本</strong>。处处体现着<strong>极简主义</strong>的影子。</li>
