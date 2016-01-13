@@ -22,3 +22,4 @@ categories: IT技术
 ## 写作
 
     $ hexo new [layout] <title>
+    

@@ -5,7 +5,6 @@ categories: IT技术
 ---
 
 1. Table强制不换行
-    
+
         .table td,.table th{word-break: keep-all;white-space:nowrap;}
-    
 
