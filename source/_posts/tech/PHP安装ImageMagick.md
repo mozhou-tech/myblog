@@ -1,6 +1,6 @@
 title: 安装ImageMagick和php-imagick
 date: 2016-01-12 12:58:54
-tags: 快速笔记
+tags: 快捷笔记
 categories: IT技术
 ---
 

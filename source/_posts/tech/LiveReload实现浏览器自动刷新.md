@@ -1,6 +1,6 @@
 title: LiveReload实现浏览器自动刷新
 date: 2016-01-06 16:47:28
-tags: 快速笔记
+tags: 快捷笔记
 categories: IT技术
 ---
 
