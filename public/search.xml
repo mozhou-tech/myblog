@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[人机交互不似社交]]></title>
+      <url>http://tenstone.me/2016/01/18/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E4%B8%8D%E4%BC%BC%E7%A4%BE%E4%BA%A4/</url>
+      <content type="html"><![CDATA[<h2 id="昨天开了个会">昨天开了个会</h2><p>这算是来Q家后第一次非正式的会吧，开会是个学习的好机会，下面写一写我在会上所学的东西吧！作为一个程序猿和勉强的产品经理，和各种软件打交道：写代码、绘制产品原型，跟一般人比起来，也算是遇神杀神遇佛杀佛。但对如何跟人打交道，确实是知之甚少。</p>
+<p>打小我就是个不善言辞的人，大学时更是找心理咨询老师去疏导自己的社交障碍。我一直记得那次不算长的聊天，老师叫焦阳，他说我就是独一无二的，任别人怎么说都无法改变，何不接受这一切，在当天我是接受了，也努力去克服我给自己设置的障碍。毕业后，长期与计算机打交道，似乎让我又回到了以前的境地：总是把自己封闭在一个封闭的圈子里面，不愿意出去。</p>
+<h2 id="体会">体会</h2><p>而这个社会的本质，是人人交互并非人机或是人件交互。的确，在某些时候我们通过人机交互完成了人际沟通，但人件终究是个满足个人需要的工具而已，是人体器官的延伸。若想真的有所作为，没有人际社交的本领确实是不够的。</p>
+<p>昨天在看一个电视剧《少帅》，张学良说了一句话，财散人聚。在那个人件相对匮乏的年代，社会交际那些佼佼者才是主题，其实现在也一样。</p>
+<p>公司的运营，那是一个群体社交。</p>
+<p>社交无论在哪个时代都是永恒的主题。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[若在古代，我要做一个胸怀王志的侠客]]></title>
+      <url>http://tenstone.me/2016/01/17/%E8%8B%A5%E5%9C%A8%E5%8F%A4%E4%BB%A3%EF%BC%8C%E6%88%91%E8%A6%81%E5%81%9A%E4%B8%80%E4%B8%AA%E8%83%B8%E6%80%80%E7%8E%8B%E5%BF%97%E7%9A%84%E4%BE%A0%E5%AE%A2/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[程序员思维与运营者思维]]></title>
       <url>http://tenstone.me/2016/01/14/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%80%9D%E7%BB%B4%E9%80%BB%E8%BE%91/</url>
       <content type="html"><![CDATA[<p>这篇文章是我对自己过去思维模式的反思。昨天吃着饭，不经意说自己毕业两年半了，他们说不像，哈哈。前天联系上了艾江山的邓兄，可他们已经在做APP了，真是遗憾，下面是邓兄的回复：</p>
@@ -317,7 +335,7 @@ clear
     
     <entry>
       <title><![CDATA[来一掌O2O平台技术架构]]></title>
-      <url>http://tenstone.me/2015/12/04/%E6%9D%A5%E4%B8%80%E6%8E%8CO2O%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/</url>
+      <url>http://tenstone.me/2015/12/04/tech/%E6%9D%A5%E4%B8%80%E6%8E%8CO2O%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/</url>
       <content type="html"><![CDATA[<p>来一掌CTO还是我人生路上还是比较重要的一个角色。留下技术笔记，供后来回忆，也给大家用来参考。</p>
 <h2 id="技术框架">技术框架</h2><p>后台：CentOS、Nginx、PHP、MySQL<br>前端：Angularjs<br>PHP framework：Laravel<br>选择前端框架的时候，纠结了好一整子，错过了ionicframework。后来发现企查查把这个基于Angularjs的框架用的很好，所以我在自己的另一个“灸法速查”项目中用了起来，效率还是挺高的。</p>
 <h2 id="说说Modern_PHP">说说Modern PHP</h2><p>后来才知道更多人用的是PHP5.3以前的版本，当时花了很多时间找到这个Laravel框架，14年底刚刚开始在国内流行，但是在国外已经风生水气了。一个最大的好处是借鉴了Linux的包管理机制，在<a href="http://packagist.org" target="_blank" rel="external">packagist.org</a>可以找到大多数你需要开发，但是已经有人做好了的功能。所需要做的，就是把包名加入composer.json，执行php composer.phar update，然后参照文档编写。<br>如果你想更深入的了解Modern PHP，可以Star这个仓库：<a href="https://github.com/laravel-china/php-the-right-way" target="_blank" rel="external">https://github.com/laravel-china/php-the-right-way</a>。</p>
