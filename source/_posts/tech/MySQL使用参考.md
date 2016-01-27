@@ -25,6 +25,10 @@ categories: IT技术
        
        mysqldump -u root qjiatrip > backup.sql
        #mysqldump -u 用户名 数据库名 > 备份名.sql
+
+从sql文件导入数据：
+
+       mysql -u root qtrip_scm <~/20160107.sql
        
 嗯，就是这样。
        
