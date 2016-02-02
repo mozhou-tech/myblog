@@ -4,6 +4,12 @@
   
     
     <entry>
+      <title><![CDATA[bower常用命令]]></title>
+      <url>http://tenstone.me/2016/01/20/tech/bower%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[人机交互不似社交]]></title>
       <url>http://tenstone.me/2016/01/18/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E4%B8%8D%E4%BC%BC%E7%A4%BE%E4%BA%A4/</url>
       <content type="html"><![CDATA[<h2 id="昨天开了个会">昨天开了个会</h2><p>这算是来Q家后第一次非正式的会吧，开会是个学习的好机会，下面写一写我在会上所学的东西吧！作为一个程序猿和勉强的产品经理，和各种软件打交道：写代码、绘制产品原型，跟一般人比起来，也算是遇神杀神遇佛杀佛。但对如何跟人打交道，确实是知之甚少。</p>
@@ -319,7 +325,7 @@ clear
     
     <entry>
       <title><![CDATA[CentOS 7下安装MySQL使用参考]]></title>
-      <url>http://tenstone.me/2015/12/18/tech/CentOS-7%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83/</url>
+      <url>http://tenstone.me/2015/12/18/tech/MySQL%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83/</url>
       <content type="html"><![CDATA[<p>部署环境：CentOS下安装MySQL5.6.28。一开始安装MySQL5.7.10也是遇到这个问题。</p>
 <h2 id="改变数据目录后无法启动">改变数据目录后无法启动</h2><p>倒腾了一天，最后执行了一个软连接命令就解决了。至于原因到底是什么，还不清楚，但是这种方法解决了问题。</p>
 <pre><code>ln <span class="operator">-s</span> /alidata/mysqldata mysql
@@ -329,6 +335,8 @@ clear
 </code></pre><p>看起来Navicat把数据截断了，后来使用mysqldump转移成功</p>
 <pre><code>mysqldump -u root qjiatrip &gt; backup<span class="class">.sql</span>
 <span class="id">#mysqldump</span> -u 用户名 数据库名 &gt; 备份名.sql
+</code></pre><p>从sql文件导入数据：</p>
+<pre><code>mysql -u root qtrip_scm &lt;~/<span class="number">20160107.</span>sql
 </code></pre><p>嗯，就是这样。</p>
 ]]></content>
     </entry>
