@@ -4,9 +4,51 @@
   
     
     <entry>
+      <title><![CDATA[牛丫丫手工牛轧糖]]></title>
+      <url>http://tenstone.me/2016/02/02/startup/%E7%89%9B%E4%B8%AB%E4%B8%AB%E6%89%8B%E5%B7%A5%E7%89%9B%E8%BD%A7%E7%B3%96/</url>
+      <content type="html"><![CDATA[<h2 id="攻克心理障碍">攻克心理障碍</h2><p>工作原因跟电脑打交道比较多，所以一直很反感微商什么的。也不高兴参与，甚至微信朋友圈都很少更新了。</p>
+<p>这一次是妹子要求我的，要不然我可能不能走过心里这个砍，那些我在意的事情，大家并不一定放在心上，甚至于帮你出主意。</p>
+<p>纠结再三，我最终还是在自己的微信朋友圈发了个广告。没想到效果还不错，第一次发就卖出了22袋，以至于后来材料都不够了。今天把糖带过来，给同事的时候，我脸都红了，但事实上大家知道我做这个兼职生意后都帮我出主意。吴兄以前是做食品行业的，建议使用蜂蜜味的杏仁；二彬是做天猫美工的，开玩笑提议把糖上架公司的天猫店。</p>
+<p>问题是我总是羞于把自己的想法告诉大家，以为大家不支持，而事实上是完全相反。</p>
+<h2 id="一些关于创业的体会">一些关于创业的体会</h2><ol>
+<li><p>以前在来一掌的时候，对丁佳林的一些做法都颇有认同，但体会没那么深罢了。CEO事实上完成的几个重要的工作：整合资源、聚拢人才、制定公司规则、寻找发展机会，而参与具体事务的执行，是下下策；</p>
+</li>
+<li><p>你的客户是你的客户，不是你的客户就不是你的客户。如果不是你的客户，磨尽嘴皮对方都不会打理你一下，还可能因此而讨厌你；而真正的客户是在不断的社交、营销、宣传中获得的，而在之后要做的事情是把客户聚拢起来，运营他们，在他们之间建立固定的供需和信赖关系；</p>
+</li>
+<li><p>基于第二点，做什么都是有机会的，重点在于：寻找的用户，并维护住他们，形成持续的供需关系。</p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[bower常用命令]]></title>
       <url>http://tenstone.me/2016/01/20/tech/bower%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<ol>
+<li><p>安装Bower</p>
+<p> npm install -g bower</p>
+</li>
+<li><p>安装前端库   </p>
+<p> bower install <package><br> bower install PACKAGE –save  // 保存到bower.json</package></p>
+<p> bower init // 初始化bower.json</p>
+</li>
+</ol>
+<p>示例：    </p>
+<pre><code><span class="preprocessor"># registered package</span>
+$ bower install jquery
+<span class="preprocessor"># GitHub shorthand</span>
+$ bower install desandro/masonry
+<span class="preprocessor"># Git endpoint</span>
+$ bower install git:<span class="comment">//github.com/user/package.git</span>
+<span class="preprocessor"># URL</span>
+$ bower install http:<span class="comment">//example.com/script.js</span>
+</code></pre><ol>
+<li><p>.bowerrc示例</p>
+<p> {<br>   “directory”: “public/bower_components/“,<br>   “analytics”: false,<br>   “timeout”: 120000,<br>   “registry”: {</p>
+<p>   }<br> }</p>
+</li>
+</ol>
+]]></content>
     </entry>
     
     <entry>
