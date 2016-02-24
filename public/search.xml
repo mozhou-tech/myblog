@@ -7,21 +7,21 @@
       <title><![CDATA[技术人员招聘]]></title>
       <url>http://tenstone.me/2016/02/22/job/Q%E5%AE%B6%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%8B%9B%E8%81%98/</url>
       <content type="html"><![CDATA[<p>以前也有不少面试的经历，但总结下拉面试的时候聊得很好，但成功率极低，可以说几乎没有成功过。但吸引人才是创业过程中的必要一课，我必须在这个过程中Get√到这个技能。写下这篇文章留个笔记吧！</p>
-<p>招聘文案：</p>
-<blockquote>
-<p>前端开发工程师<br>弹性工作</p>
-<p>Q家旅行  成立于2013年 未融资<br>8k-15k<br>期权<br>年终分红</p>
-<p>需要你做的：</p>
-<ol>
-<li>公司C端产品Web前端研发</li>
-<li>公司B端产品</li>
+<h2 id="招聘文案：">招聘文案：</h2><blockquote>
+<p>前端开发工程师</p>
+<p>Q家旅行 专注境外自由行 未融资<br>福利待遇： 弹性工作 8k-15k 期权 年终分红</p>
+<h3 id="需要你做的">需要你做的</h3><ol>
+<li>公司C端产品Web前端研发(基于AngularJS)</li>
+<li>协助公司B端产品维护</li>
+<li>基于Cordova的App混合开发(APICloud或Ionic framework)</li>
+<li>编写测试用例（涉及后端部分）</li>
 </ol>
-<p>对你的要求</p>
-<ol>
-<li></li>
+<h3 id="对你的要求">对你的要求</h3><ol>
+<li>了解至少一种后端语言或开发框架(PHP、NodeJS、Python、Java WEB)</li>
+<li>掌握Laravel或NodeJS最佳</li>
 </ol>
 </blockquote>
-<p>面试时带源码</p>
+<p>面试时带项目案例或代码。</p>
 ]]></content>
     </entry>
     
@@ -438,6 +438,9 @@ clear
 </code></pre><p>看起来Navicat把数据截断了，后来使用mysqldump转移成功</p>
 <pre><code>mysqldump -u root qjiatrip &gt; backup<span class="class">.sql</span>
 <span class="id">#mysqldump</span> -u 用户名 数据库名 &gt; 备份名.sql
+</code></pre><p>从sql中恢复数据</p>
+<pre><code>mysql&gt; <span class="keyword">use</span> <span class="title">xxxdatabase</span>;
+mysql&gt; source ~/backup.sql
 </code></pre><p>从sql文件导入数据：</p>
 <pre><code>mysql -u root qtrip_scm &lt;~/<span class="number">20160107.</span>sql
 </code></pre><p>嗯，就是这样。</p>

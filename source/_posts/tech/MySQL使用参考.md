@@ -26,6 +26,11 @@ categories: IT技术
        mysqldump -u root qjiatrip > backup.sql
        #mysqldump -u 用户名 数据库名 > 备份名.sql
 
+从sql中恢复数据
+       
+       mysql> use xxxdatabase;
+       mysql> source ~/backup.sql
+
 从sql文件导入数据：
 
        mysql -u root qtrip_scm <~/20160107.sql
