@@ -15,15 +15,15 @@ categories:
 
 > ### 需要你做的
 
-> 1. 公司C端产品Web前端研发(基于AngularJS)
+> 1. 公司C端产品Web前端研发
 > 2. 协助公司B端产品维护
 > 3. 基于Cordova的App混合开发(APICloud或Ionic framework)
 > 4. 编写测试用例（涉及后端部分）
 
 > ### 对你的要求
 
+> 1. 熟练掌握各种前端技术(H5、CSS3、Javascript、jQuery等)
 > 1. 了解至少一种后端语言或开发框架(PHP、NodeJS、Python、Java WEB)
-> 1. 掌握Laravel或NodeJS最佳
-
-面试时带项目案例或代码。
-    
+> 1. 两年以上相关工作经验，有成熟的项目案例
+> 1. 不排斥PHP Laravel框架技术的学习
+> 1. 技术博客作者更佳
