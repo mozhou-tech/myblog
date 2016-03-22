@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/写作/" style="font-size: 12.5px;">写作</a> <a href="/tags/创业/" style="font-size: 17.5px;">创业</a> <a href="/tags/创业手记/" style="font-size: 10px;">创业手记</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 12.5px;">搜索熊“寻人启事”</a> <a href="/tags/股票/" style="font-size: 12.5px;">股票</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a>
+						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/写作/" style="font-size: 12.5px;">写作</a> <a href="/tags/创业/" style="font-size: 17.5px;">创业</a> <a href="/tags/创业手记/" style="font-size: 10px;">创业手记</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 12.5px;">搜索熊“寻人启事”</a> <a href="/tags/股票/" style="font-size: 12.5px;">股票</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a>
 					</div>
 				</section>
 				
@@ -199,6 +199,125 @@
     </article>
 </div>
 <!-- Search plugin  end -->
+
+  
+    <article id="post-tech/python-package开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/18/tech/python-package开发/" class="article-date">
+  	<time datetime="2016-03-18T09:08:24.000Z" itemprop="datePublished">2016-03-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/18/tech/python-package开发/">python package开发</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在尝试开发Python Package的时候，总是Import Error，后来发现是终端找不到这个包，以下是解决方法：</p>
+<p>首先需要使用sys.path.append方法将b.py所在目录加入到搜素目录中</p>
+<pre><code><span class="keyword">import</span> sys 
+sys.path.<span class="built_in">append</span>(<span class="string">'c:\xxxx\b.py'</span>) # 这个例子针对 windows 用户来说的 
+</code></pre><p>使用pth文件，在 site-packages 文件中创建 .pth文件，将模块的路径写进去，一行一个路径，以下是一个示例，pth文件也可以使用注释：</p>
+<pre><code><span class="special">#</span> .pth file for the  my project
+E:<span class="command">\DjangoWord</span>
+E:<span class="command">\DjangoWord</span><span class="command">\mysite</span>
+E:<span class="command">\DjangoWord</span><span class="command">\mysite</span><span class="command">\polls</span>
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-job/个人简历" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/18/job/个人简历/" class="article-date">
+  	<time datetime="2016-03-18T01:25:57.000Z" itemprop="datePublished">2016-03-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/18/job/个人简历/">个人简历</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>90年；毕业于常熟理工；<br>2010年创办iCSLG社区，一度火爆成为最受欢迎的校园社区<br>2013-2014壹进制公司产品经理</p>
+<p>Photoshop、Axure<br>Nginx、Apache、Python、PHP、HTML、CSS3、Shell脚本、jQuery、MarkDown、Git、AngularJS、Markdown<br>服务器运维、自动化部署</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
 
   
     <article id="post-tech/tuShare本地存储MongoDB文档设计" class="article article-type-post" itemscope itemprop="blogPost">
@@ -489,7 +608,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>每周记一次，预测下周市场走向，并总结上周预测结果模拟收益。</p>
-<p>2016年2月 开始模拟，初始资金10w<br>双汇股份        收益2.3%              预测行情先跌后涨，继续调整</p>
+<p>2016年2月 开始模拟，初始资金10w<br>持有股票            涨跌                  行情预测<br>双汇股份            浮盈2.3%              预测行情先跌后涨，继续调整(持续放量上涨)<br>中国国航、沙钢股份  浮盈5.31%             根据市场特性：暴牛暴熊，估计短期内会持续上涨</p>
 
       
     </div>
@@ -506,59 +625,6 @@
 	<a class="article-category-link" href="/categories/随笔/">随笔</a>
 	</div>
 
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-job/让别人知道你的胃口" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/04/job/让别人知道你的胃口/" class="article-date">
-  	<time datetime="2016-03-04T06:16:06.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/job/让别人知道你的胃口/">让别人知道你的胃口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>人生像一盘棋，又有时限。胜利并不意味者干掉对方的将军，在下棋的过程中愉悦身心，何其乐哉。</p>
-<p>虽然下棋目的在此，但我们仍然希望赢棋，希望在象田马日间不断壮大自己的实力，人生亦是如此</p>
-<p>所以，棋局意识，把自己当成一个局外者，理性看待局内的一切。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
 
       
       <div class="clearfix"></div>
@@ -723,9 +789,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>投资股票，是可以受用一生的技能，通向财务自由的捷径。<br>招外有招，招里有招，见招拆招，变幻无穷，才能立于不败之地。</p>
-<p>逃不过熊市的</p>
-<h2 id="基本原则（至多10条）">基本原则（至多10条）</h2><ol>
+        <h1 id="已经决定放弃用这种方式炒股了，因为看不透，转向交易数据和市场情绪分析">已经决定放弃用这种方式炒股了，因为看不透，转向交易数据和市场情绪分析</h1><h2 id="基本原则（至多10条）">基本原则（至多10条）</h2><ol>
 <li>盯着1个被市场低估的股票[1]，每个股的脾气都不一样（为了方便控制仓位，视资金总量按股价选股）</li>
 <li>先判断行情（牛熊市），以便控制仓位（缩小K线看走势）</li>
 <li>买入卖出时间，看PSY心理线（结合行情控制仓位）</li>
@@ -745,10 +809,7 @@
 <li>如果克服不了自己的贪欲，只能靠运气，而且会带来不断的心理磨难</li>
 <li>只打有把握的仗，在有把握的时机下手</li>
 </ol>
-<h3 id="VR分布">VR分布</h3><p>A.低价区域：70~40——为可买进区域<br>B.安全区域：150~80——正常分布区域<br>C.获利区域：450~160——应考虑获利了结<br>D.警戒区域：450以上——股价已过高<br>分析股价上升日成交额（或成交量，下同）与股价下降日成交额比值，从而掌握市场买卖气势的中期技术指标。</p>
-<h3 id="PSY分布（PSY＝N日内的上涨天数/N×100）">PSY分布（PSY＝N日内的上涨天数/N×100）</h3><p>A. &gt;75  – – 超买<br>B. 25-75 – – 常态分布<br>C. &lt;25 – – 超卖<br>D. &lt;10 – – 真正的超卖</p>
-<p>心理线主要反映市场心理的超买或超卖，因此，当百分比值在常态区域上下移动时，一般应持观望态度。</p>
-<p>[1] 被市场低估的股票，基本面还不错，现价低于历史最高估价很多倍<br>[2] 买入(重仓)时机：当前盘口最低价，三连阳不买（百度指数）<br>[3] 卖出时机：<br>[4] 牛市判断：依据孙子兵法立策决胜之术要有三，一曰形(K线上升趋势)、二曰势(成交量支撑)、三曰情(市场意愿：百度指数)</p>
+<p>[1] 基本面还不错，小估值，便宜的股票<br>[2] 买入(重仓)时机：当前盘口最低价，三连阳不买（百度指数）<br>[3] 卖出时机：成交量出现暴增或暴减（转折点）<br>[4] 牛市判断：依据孙子兵法立策决胜之术要有三，一曰形(K线上升趋势)、二曰势(成交量支撑)、三曰情(市场意愿：百度指数)</p>
 
       
     </div>
@@ -885,76 +946,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/生活随笔/">生活随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-startup/牛丫丫手工牛轧糖" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/startup/牛丫丫手工牛轧糖/" class="article-date">
-  	<time datetime="2016-02-02T02:51:56.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/startup/牛丫丫手工牛轧糖/">牛丫丫手工牛轧糖</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="攻克心理障碍">攻克心理障碍</h2><p>工作原因跟电脑打交道比较多，所以一直很反感微商什么的。也不高兴参与，甚至微信朋友圈都很少更新了。</p>
-<p>这一次是妹子要求我的，要不然我可能不能走过心里这个砍，那些我在意的事情，大家并不一定放在心上，甚至于帮你出主意。</p>
-<p>纠结再三，我最终还是在自己的微信朋友圈发了个广告。没想到效果还不错，第一次发就卖出了22袋，以至于后来材料都不够了。今天把糖带过来，给同事的时候，我脸都红了，但事实上大家知道我做这个兼职生意后都帮我出主意。吴兄以前是做食品行业的，建议使用蜂蜜味的杏仁；二彬是做天猫美工的，开玩笑提议把糖上架公司的天猫店。</p>
-<p>问题是我总是羞于把自己的想法告诉大家，以为大家不支持，而事实上是完全相反。</p>
-<h2 id="一些关于创业的体会">一些关于创业的体会</h2><ol>
-<li><p>以前在来一掌的时候，对丁佳林的一些做法都颇有认同，但体会没那么深罢了。CEO事实上完成的几个重要的工作：整合资源、聚拢人才、制定公司规则、寻找发展机会，而参与具体事务的执行，是下下策；</p>
-</li>
-<li><p>你的客户是你的客户，不是你的客户就不是你的客户。如果不是你的客户，磨尽嘴皮对方都不会打理你一下，还可能因此而讨厌你；而真正的客户是在不断的社交、营销、宣传中获得的，而在之后要做的事情是把客户聚拢起来，运营他们，在他们之间建立固定的供需和信赖关系；</p>
-</li>
-<li><p>基于第二点，做什么都是有机会的，重点在于：寻找的用户，并维护住他们，形成持续的供需关系。</p>
-</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业手记/">创业手记</a></li></ul>
 	</div>
 
       
