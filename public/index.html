@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/写作/" style="font-size: 12.5px;">写作</a> <a href="/tags/创业/" style="font-size: 17.5px;">创业</a> <a href="/tags/创业手记/" style="font-size: 10px;">创业手记</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 12.5px;">搜索熊“寻人启事”</a> <a href="/tags/股票/" style="font-size: 12.5px;">股票</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a>
+						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/写作/" style="font-size: 12.5px;">写作</a> <a href="/tags/创业/" style="font-size: 17.5px;">创业</a> <a href="/tags/创业手记/" style="font-size: 10px;">创业手记</a> <a href="/tags/快捷笔记/" style="font-size: 20px;">快捷笔记</a> <a href="/tags/搜索熊“寻人启事”/" style="font-size: 12.5px;">搜索熊“寻人启事”</a> <a href="/tags/股票/" style="font-size: 12.5px;">股票</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/运营/" style="font-size: 10px;">运营</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a>
 					</div>
 				</section>
 				
@@ -199,6 +199,84 @@
     </article>
 </div>
 <!-- Search plugin  end -->
+
+  
+    <article id="post-tech/Linux进程前后台切换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/22/tech/Linux进程前后台切换/" class="article-date">
+  	<time datetime="2016-03-22T07:07:18.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/tech/Linux进程前后台切换/">Linux进程前后台切换</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux中前后台进程相关的命令：</p>
+<pre><code><span class="command"><span class="keyword">command</span> &amp;   // 将进程放在后台执行</span>
+ctrl-z     <span class="comment"> // 暂停当前进程 并放入后台</span>
+jobs       <span class="comment"> // 查看当前后台任务</span>
+bg         <span class="comment"> // 将任务转为后台执行</span>
+fg         <span class="comment"> // 将任务调回前台</span>
+<span class="built_in">kill</span>       <span class="comment"> // 杀掉任务</span>
+</code></pre><p>假设你发现前台运行的一个程序需要很长的时间，但是需要干其他的事情，你就可以用 Ctrl-Z ，挂起这个程序，然后可以看到系统提示：<br>[1]+ Stopped /root/bin/rsync.sh<br>然后我们可以把程序调度到后台执行：（bg 后面的数字为作业号）</p>
+<p>###　bg 1<br>[1]+ /root/bin/rsync.sh &amp;<br>用 jobs 命令查看正在运行的任务：</p>
+<h3 id="jobs">jobs</h3><p>[1]+ Running /root/bin/rsync.sh &amp;<br>如果想把它调回到前台运行，可以用</p>
+<h3 id="fg_1">fg 1</h3><p>/root/bin/rsync.sh<br>这样，你在控制台上就只能等待这个任务完成了。</p>
+<h2 id="SSH关闭时，让进程在后台可靠运行">SSH关闭时，让进程在后台可靠运行</h2><p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">Linux 技巧：让进程在后台可靠运行的几种方法</a><br>nohup 无疑是我们首先想到的办法。顾名思义，nohup 的用途就是让提交的命令忽略 hangup 信号。让我们先来看一下 nohup 的帮助信息：<br>NOHUP(1)                        User Commands                        NOHUP(1)</p>
+<p>NAME<br>       nohup - run a command immune to hangups, with output to a non-tty</p>
+<p>SYNOPSIS<br>       nohup COMMAND [ARG]…<br>       nohup OPTION</p>
+<p>DESCRIPTION<br>       Run COMMAND, ignoring hangup signals.</p>
+<pre><code>--<span class="keyword">help</span> <span class="keyword">display</span> this <span class="keyword">help</span> <span class="built_in">and</span> <span class="keyword">exit</span>
+
+--<span class="keyword">version</span>
+       output <span class="keyword">version</span> information <span class="built_in">and</span> <span class="keyword">exit</span>
+</code></pre><p>可见，nohup 的使用是十分方便的，只需在要处理的命令前加上 nohup 即可，标准输出和标准错误缺省会被重定向到 nohup.out 文件中。一般我们可在结尾加上”&amp;”来将命令同时放入后台运行，也可用”&gt;filename 2&gt;&amp;1”来更改缺省的重定向文件名。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/IT技术/">IT技术</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
 
   
     <article id="post-tech/python-package开发" class="article article-type-post" itemscope itemprop="blogPost">
@@ -889,68 +967,6 @@ E:<span class="command">\DjangoWord</span><span class="command">\mysite</span><s
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/随笔/">随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-写在2015的最后几天" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/04/写在2015的最后几天/" class="article-date">
-  	<time datetime="2016-02-04T08:27:42.000Z" itemprop="datePublished">2016-02-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/04/写在2015的最后几天/">写在2015的最后几天</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>明天回家了，今天总结一下过去的三个多月，还有在来一掌的几个月。</p>
-<h2 id="15年4月离开壹进制加入来一掌">15年4月离开壹进制加入来一掌</h2><p>从13年参加工作开始，在壹进制呆了有两年，其中半年多做PHP工程师，剩下的一年半做产品经理。在这两年里获得的提升是不小的，当然离开是为了更大的进步。14年10月份在一家创业咖啡吧埋下种子，在来一掌天使轮后就加入了，没有具体定岗姑且称作技术总监吧。</p>
-<h2 id="15年10月26日加入Q家旅行">15年10月26日加入Q家旅行</h2><p>最初来的时候，给我的感觉是大家的执行力都很好，当然这是建立在一个已经经过验证的业务流程之上。<br>也算是中途加入的创业者吧。短短三个月，我用一套系统，推动着整个公司的业务改变着，不过我可是一心向着运营，希望有朝一日技术工作告一段落，参与到具体的运营工作中。</p>
-<h2 id="明年计划">明年计划</h2><p>促进公司C端发力，还有就是争取能抱个娃吧。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/生活随笔/">生活随笔</a>
 	</div>
 
 
