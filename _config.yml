@@ -108,3 +108,10 @@ toc:
 markdown:
   render:
     html: true
+
+# title, chinese available
+links_title: Links
+# links
+links:
+  MacTalk: http://macshuo.com/
+  MBA Wiki: http://wiki.mbalib.com/
