@@ -6,7 +6,7 @@
 favicon: /favicon.png
 
 # Set default keywords (Use a comma to separate)
-keywords: "刘远程的博客"
+keywords: "刘远程"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -26,8 +26,8 @@ rss:
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories
-  #about: /about
+#  categories: /categories
+#  about: /about
   archives: /archives
   tags: /tags
   #commonweal: /404.html
@@ -231,7 +231,7 @@ mathjax:
 #baidu_analytics:
 
 # Duoshuo ShortName
-#duoshuo_shortname:
+duoshuo_shortname: tenstone
 
 # Disqus
 #disqus_shortname:
