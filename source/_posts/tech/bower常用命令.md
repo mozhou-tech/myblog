@@ -1,4 +1,4 @@
-title: bower常用命令
+title: Bower常用命令
 date: 2016-01-20 16:26:44
 tags: 快捷笔记
 categories: IT技术
