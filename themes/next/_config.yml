@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: /favicon.png
+favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
 keywords: "刘远程"
@@ -27,8 +27,8 @@ rss:
 menu:
   home: /
   categories: /categories
-  archives: /archives
   tags: /tags
+  archives: /archives
   about: /about
 
   #commonweal: /404.html
@@ -226,7 +226,7 @@ mathjax:
 
 
 # Swiftype Search API Key
-swiftype_key: qYoTBytRBRvkcW-NGAr4
+swiftype_key: KcmpNzxb7fmbFyfhZcy6
 
 # Baidu Analytics ID
 #baidu_analytics:

@@ -7,7 +7,7 @@ title: 刘远程's BLOG
 subtitle: 生活不止眼前的苟且，还有诗和远方
 description:
 author: 刘远程
-language: zh-cn
+language: en
 timezone:
 
 # URL
@@ -76,9 +76,9 @@ deploy:
 
 #  repo: https://github.com/PaicHyperionDev/hexo-generator-search
 
-search:
-  path: search.xml
-  field: post
+#search:
+#  path: search.xml
+#  field: post
 
 # repo: https://github.com/unhealthy/hexo-all-minifier
 html_minifier:
