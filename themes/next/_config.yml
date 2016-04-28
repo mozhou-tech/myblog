@@ -26,8 +26,8 @@ rss:
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  categories: /categories
   tags: /tags
+  categories: /categories
   archives: /archives
   about: /about
 
