@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tenstone - 刘远程's祖传博客
-subtitle: 刘远程's祖传博客
+title: 刘远程的博客
+subtitle: 生活不止眼前的苟且，还有诗和远方
 description:
-author: Tenstone
+author: 刘远程
 language: zh-cn
 timezone:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
