@@ -35,7 +35,7 @@ external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
-relative_link: false
+relative_link: true
 future: true
 highlight:
   enable: true
@@ -114,4 +114,5 @@ links_title: Links
 # links
 links:
   MacTalk: http://macshuo.com/
-  MBA Wiki: http://wiki.mbalib.com/
+  MBA百科: http://wiki.mbalib.com/
+  LeetCodeOJ: https://leetcode.com/
