@@ -82,7 +82,7 @@ deploy:
 
 # repo: https://github.com/unhealthy/hexo-all-minifier
 html_minifier:
-  enable: false
+  enable: true
   exclude:
 
 css_minifier:
@@ -98,16 +98,6 @@ js_minifier:
   exclude:
     - all.min.js
 
-
-
-toc:
-  maxDepth: 3
-
-# Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  render:
-    html: true
 
 # title, chinese available
 links_title: Links

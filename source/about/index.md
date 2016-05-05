@@ -4,7 +4,7 @@ comments: false
 
 ------------
 
-![](/images/26662963116_e42e5a8743_c.jpg)
+![](/images/about.jpg)
 
 ### 生活
 
