@@ -103,9 +103,8 @@ js_minifier:
 links_title: Links
 # links
 links:
-  MBA百科: http://wiki.mbalib.com/
-  LeetCodeOJ: https://leetcode.com/
-  日经新闻网: https://cn.nikkei.com/
-  FT中文往: https://cn.nikkei.com/
-  视觉中国: http://www.visualchina.com/
-  淘宝UED: http://ued.taobao.org/blog/
+  MBA Wiki: http://wiki.mbalib.com/
+  NIKKEI News: https://cn.nikkei.com/
+  FT China: https://cn.nikkei.com/
+  China Visual: http://www.visualchina.com/
+  Taobao UED: http://ued.taobao.org/blog/
