@@ -76,9 +76,9 @@ deploy:
 
 #  repo: https://github.com/PaicHyperionDev/hexo-generator-search
 
-#search:
-#  path: search.xml
-#  field: post
+search:
+  path: search.xml
+  field: post
 
 # repo: https://github.com/unhealthy/hexo-all-minifier
 html_minifier:

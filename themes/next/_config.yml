@@ -120,7 +120,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/tenstone
-  知乎: https://www.zhihu.com/people/lyc90
+  Zhihu: https://www.zhihu.com/people/lyc90
 
 
 # Social Links Icons
@@ -135,7 +135,7 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
-  知乎: houzz
+  Zhihu: houzz
 
 
 # Sidebar Avatar
@@ -228,7 +228,7 @@ mathjax:
 
 
 # Swiftype Search API Key
-swiftype_key: KcmpNzxb7fmbFyfhZcy6
+#swiftype_key: KcmpNzxb7fmbFyfhZcy6
 
 # Baidu Analytics ID
 #baidu_analytics:
