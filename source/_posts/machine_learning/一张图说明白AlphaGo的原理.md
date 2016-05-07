@@ -1,7 +1,10 @@
 title: 一张图说明白AlphaGo的原理
 date: 2016-05-07 13:40:41
 tags:
+- 机器学习
+- 算法
 categories:
+- 机器学习
 ---
 
 ![](/images/2016/alpha_go_theroy.jpg)
