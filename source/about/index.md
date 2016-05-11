@@ -4,7 +4,7 @@ comments: false
 
 ------------
 
-![](/images/about.jpg)
+![](/images/2016/about.jpg)
 
 ### 生活
 
@@ -24,7 +24,7 @@ comments: false
 
 开发：Linux、PHP(ThinkPHP/Laravel)、Python、HTML、CSS3、Javascript(jQuery/AngularJS)、GIT、TensorFlow
 产品/设计：Photoshop、Axure、PPT
-统计分析：Python、R语言
+统计分析：Python、Jupyter Notebook
 数据挖掘：Weka
 融资：分别参与过2家公司天使轮和PerA轮融资
 
