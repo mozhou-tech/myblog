@@ -1,7 +1,9 @@
 title: 使用Github项目协作
 date: 2016-01-13 10:56:00
 tags:
+- 快捷笔记
 categories:
+- IT技术
 ---
 
 ## Fork
