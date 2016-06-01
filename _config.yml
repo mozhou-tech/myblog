@@ -82,16 +82,16 @@ search:
 
 # repo: https://github.com/unhealthy/hexo-all-minifier
 html_minifier:
-  enable: true
+  enable: false
   exclude:
 
 css_minifier:
-  enable: true
+  enable: false
   exclude:
     - all.min.css
 
 js_minifier:
-  enable: true
+  enable: false
   mangle: true
   output:
   compress:
