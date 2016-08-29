@@ -2,6 +2,7 @@
 .idea/
 *.log
 node_modules/
+.deploy_git
 
 # Ignore unused verdors' files
 source/vendors/fancybox/*
@@ -12,3 +13,4 @@ source/vendors/font-awesome/scss/
 
 source/vendors/ua-parser-js/*
 !source/vendors/ua-parser-js/dist/
+
